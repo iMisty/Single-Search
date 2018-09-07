@@ -21,7 +21,7 @@ a{
     justify-content: center;
     align-items: center;
 }
-#wrap-front{
+#app{
     flex-direction: column;
     height: 100vh;
     background-color: rgba(0,0,0,.4);
@@ -52,12 +52,13 @@ li{
     font-size: 2.2vw;
     padding: 40px;
     transition: .2s ease;
+    text-align: center;
 }
 .active{
     color: transparent;
 }
 .hide{
-    display: none;
+    display: none !important;
 }
 a:hover{
     background-color: #fff;
