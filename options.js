@@ -17,88 +17,78 @@ var background = [
                 'https://ws2.sinaimg.cn/large/0065BpO8gy1fuhnokeop1j31hc0u0too.jpg',
                 'https://ws4.sinaimg.cn/large/007giGeVly1fuvsgpyiplj31hc0u0adj.jpg'
             ];
-/**
- * 表世界文字
- * title: 显示在顶部标题栏中的标题
- * primanyHeader: 页面内主标题
- * secondHeader: 页面内副标题
- * links: 链接按钮
- * link: 链接
- * icon: 图标,由 font-awesome 驱动
- * value: 按钮文字
- * blank: 是否在新窗口打开(V2.0为默认全部新选项卡/新窗口打开,此选项为摆设)
- */
-var exteriorWorld = {
-    title: 'Miya Neko House',
-    primanyHeader: 'Miya Neko House',
-    secondHeader: 'Moeist',
-    links: [
-        {
-            link: 'https://miya.moe',
-            icon: 'fa-home',
-            value: 'Blog',
-            blank: true
-        },
-        {
-            link: 'https://github.com/jingyi21',
-            icon: 'fa-github',
-            value: 'GitHub',
-            blank: true
-        },
-        {
-            link: 'https://twitter.com/KannadukiShizuE',
-            icon: 'fa-twitter',
-            value: 'Twitter',
-            blank: true
-        },
-        {
-            icon: 'fa-plane',
-            value: 'Deep Dark Extra',
-            blank: false
-        }
-    ]
-};
-/**
- * 里世界文字
- * title: 显示在顶部标题栏中的标题
- * primanyHeader: 页面内主标题
- * secondHeader: 页面内副标题
- * links: 链接按钮
- * link: 链接
- * icon: 图标,由 font-awesome 驱动
- * value: 按钮文字
- * blank: 是否在新窗口打开(V2.0为默认全部新选项卡/新窗口打开,此选项为摆设)
- */
-var behideWorld = {
-    title: 'Magic House',
-    primanyHeader: '里世界魔法屋',
-    secondHeader: ['进来魔法屋,就得完全听我的指示','我选出符合条件的人','你来决定他们的命运','嘿,轮到你了'],
-    links: [
-        {
-            link: 'https://blog.shizu17.pw',
-            icon: 'fa-home',
-            value: '裏・Blog',
-            blank: true
-        },
-        {
-            link: 'https://blog.shizu17.pw/?p=5',
-            icon: 'fa-paper-plane',
-            value: 'ShadowSocksRR',
-            blank: true
-        },
-        {
-            link: 'https://ws3.sinaimg.cn/large/0065BpO8gy1fuwmt11x8gj30dq0af3za.jpg',
-            icon: 'fa-star',
-            value: '魔法屋',
-            blank: true
-        },
-        {
-            icon: 'fa-plane',
-            value: 'Back World',
-            blank: false
-        }
-    ]
+
+
+var removeRibbon = {
+    
+    /* 若要删除右上角 fork 图标,请将 removeFork 的值改为 true */
+    removeFork: false,
+
+    /* 若要取消底端的一言功能,请将 removeHitokoto 的值改为 true */
+    removeHitokoto: false
+
 }
 
 
-export { background,exteriorWorld,behideWorld }
+/**
+ * 设置页面内容,请根据注释内容设置
+ */
+
+var getHeader = {
+    
+    /* 此处设置标题,将显示在顶部标题栏中 */
+    title: 'TY-Landing Page Demo'
+
+}
+var getWrap = {
+
+    /* 此处设置主标题 */
+    primanyTitle: 'Landing Page',
+    
+    /* 此处设置副标题 */
+    secendTitle: '点击以下链接开始',
+
+    /* 你需要多少个链接,推荐3或4个 */
+    linksLength: 3,
+
+    /* 以下是链接,每一个大括号代表一个链接
+     * icon: 欲显示的图标,默认为 font-awesome 样式,图标参考:http://fontawesome.dashgame.com/
+     * link: 链接地址,请输入完整的 http 或 https 链接
+     * value: 显示的名称
+     */
+    links: [{
+        icon: 'fa fa-home',
+        link: 'https://github.com/Jingyi21/LandingPage',
+        value: 'GitHub'
+    },{
+        icon: 'fa fa-paper-plane',
+        link: 'https://github.com/Jingyi21/LandingPage/blob/master/README.md',
+        value: '使用说明'
+    },{
+        icon: 'fa fa-terminal',
+        link: 'https://jingyi21.github.io/LandingPage/LandingPage%20v1.0/index.html',
+        value: '另一个版本Demo'
+    }]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export { background,getHeader,getWrap,removeRibbon }

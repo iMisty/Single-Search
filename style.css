@@ -1,9 +1,11 @@
+body{
+    overflow: hidden;
+    padding: 0;
+}
 body,h1,h2,p{
     font-family: 'Chelsea', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
     color: #fff;
-
+    margin: 0;
 }
 a{
     color: #fff;
@@ -33,11 +35,13 @@ h1{
     font-size: 8vw;
     transition: .2s ease;
     letter-spacing: 4px;
+    padding: 8px 0;
 }
 h2{
-    font-size: 6.8vw;
+    font-size: 4vw;
     letter-spacing: 4px;
     transition: .2s ease;
+    padding: 8px 0;
 }
 h1,h2,h3{
     text-align: center;
@@ -50,7 +54,7 @@ ul,li{
 }
 li{
     font-size: 2.2vw;
-    padding: 40px;
+    padding: 8px 40px 40px 0;
     transition: .2s ease;
     text-align: center;
 }
@@ -68,18 +72,11 @@ a:hover{
     color: #000;
     transition: .2s ease;
 }
-/*
-@media screen and (max-width: 1350px){
-    h1{
-        font-size: 7rem;
-        transition: .2s ease;
-    }
-    h2{
-        font-size: 4.2rem;
-        letter-spacing: 4px;
-        transition: .2s ease;
-    }
-}*/
+#hitokoto{
+    text-align: center;
+    margin-top: 5vh;
+    text-shadow: 2px 2px 2px #000;
+}
 @media screen and (max-width: 1060px){
     ul{
         flex-direction: column;
@@ -88,21 +85,4 @@ a:hover{
         font-size: 4vw;
         padding: 20px;
     }
-}/*
-@media screen and (max-width: 750px){
-    h1{
-        font-size: 3rem;
-        transition: .2s ease;
-    }
-    h2{
-        font-size: 1.6rem;
-        letter-spacing: 4px;
-        transition: .2s ease;
-    }
-    ul{
-        flex-direction: column;
-    }
-    li{
-        padding: 20px;
-    }
-}*/
+}

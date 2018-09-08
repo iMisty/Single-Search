@@ -2,10 +2,10 @@ var webpack = require('webpack');
 var path = require('path');
 var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 module.exports = {
-    entry: './main.js',
+    entry: './function.js',
     output: {
         path: path.resolve(__dirname, './'),
-        filename: 'bundle.js'
+        filename: 'main.js'
     },
     module: {
         rules: [

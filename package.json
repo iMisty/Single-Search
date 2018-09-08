@@ -1,9 +1,9 @@
 {
   "name": "LandingPage",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "dependencies": {},
   "scripts": {
-    "start": "webpack-dev-server --env development",
+    "start": "webpack & webpack-dev-server --env development",
     "build": "webpack --env production"
   },
   "open": {
@@ -17,6 +17,7 @@
     "babel-preset-es2015": "^6.24.1",
     "webpack": "^4.17.2",
     "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.8"
+    "webpack-dev-server": "^3.1.8",
+    "open-browser-webpack-plugin":"^0.0.5"
   }
 }
