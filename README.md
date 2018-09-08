@@ -42,7 +42,7 @@ V1.0:复制`index.html`,`style.css`,`main.js`,`Chelsea.ttf`(可选)
 - 隐藏可选的表里跳转按钮(表/里)
 
 ### V1.0
-所有可修改部分均位于 `main.js` 的 `template` 中
+所有可修改部分均位于 `main.js` 的 `template` 中
 ### 可修改部分
 - 标题栏标题(表/里)
 - 页面内主标题(表/里)
