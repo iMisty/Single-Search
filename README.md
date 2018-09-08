@@ -3,6 +3,9 @@
 ## 项目说明
 一个静态的可供做为导航页面使用的落地页
 
+## Demo 地址
+[Demo](https://jingyi21.github.io/LandingPage/)
+
 ## 包含内容
 
 1. 随机变换的背景(自带全网 CDN ,可自定义)
