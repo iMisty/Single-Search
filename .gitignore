@@ -1,4 +1,4 @@
-
+.DS_Store
 *.ttf
 .vscode
 node_modules

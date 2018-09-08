@@ -54,6 +54,9 @@ li{
     transition: .2s ease;
     text-align: center;
 }
+span{
+    padding: 0 8px;
+}
 .active{
     color: transparent;
 }
