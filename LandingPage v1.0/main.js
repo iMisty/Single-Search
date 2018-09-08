@@ -1,6 +1,4 @@
- //import { frontWorldOption,deepWorldOption } from './option';
-
- $(document).ready(function(){
+$(document).ready(function(){
      changeBG();
      frontWorld(); 
  });
@@ -99,14 +97,4 @@ function goToDeepWorld(){
     $('a#bw').click(function(){
         frontWorld();
      })
-}
-
-function backWorld(){
-    $('#deep-dark-world').addClass('hide');
-    $('#normal-world').removeClass('hide');
-    $('#bw').removeClass('active')
-            .addClass('hide');
-    $('#dde').removeClass('hide')
-             .addClass('active');
-    $('body').css('background-color','transparent');
 }
