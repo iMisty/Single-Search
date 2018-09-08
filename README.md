@@ -17,7 +17,7 @@
 > npm install
 3. 使用以下命令运行项目
 > npm run start
-4. 若自行修改,修改完毕时重复 `3` 的过程即可
+4. 若自行修改,修改完毕时重复 `3` 的过程即可
 
 ## 如何上传到个人服务器或虚拟主机中
 V2.0:复制`index.html`,`style.css`,`bundle.js`,`Chelsea.ttf`(可选)
