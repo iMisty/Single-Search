@@ -1,4 +1,4 @@
-import { getHeader,getWrap } from './options';
+import { getHeader,getWrap } from '../options';
 
 function setTemplate(){
     $('title').text(getHeader.title);

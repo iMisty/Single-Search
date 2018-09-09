@@ -1,4 +1,4 @@
-import { background,removeRibbon } from './options';
+import { background,removeRibbon } from '../options';
 import { setTemplate } from './template';
 import { hitokoto } from './hitokoto';
 
