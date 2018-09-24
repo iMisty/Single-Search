@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import { background,removeRibbon } from '../options';
 import { setTemplate } from './template';
 import { hitokoto } from './hitokoto';

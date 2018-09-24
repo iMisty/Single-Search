@@ -1,3 +1,4 @@
+import $ from 'jquery';
 function hitokoto(){
     $('div.wrap').append('<p id="hitokoto">获取中...</p>');
     fetch('https://v1.hitokoto.cn')

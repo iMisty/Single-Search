@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import { getHeader,getWrap } from '../options';
 
 function setTemplate(){

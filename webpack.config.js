@@ -9,7 +9,19 @@ module.exports = {
     },
     module: {
         rules: [
-            {test: /\.js$/, loader: 'babel-loader'}
+            {test: /\.js$/, loader: 'babel-loader'},{
+                test: require.resolve('jquery'),
+                use: [
+                    {
+                        loader: 'expose-loader',
+                        options: '$'
+                    },
+                    {
+                        loader: 'expose-loader',
+                        options: 'jQuery'
+                    }
+                ]
+            }
         ]
     },
     devServer:{
