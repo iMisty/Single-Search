@@ -15,7 +15,8 @@
 
 ## 使用方法
 1. Clone 这个项目或 Download ZIP 的方式下载压缩包
-> 请确认计算机内已安装 `Node` 与 `npm` ,否则请使用 V1.0版本,并忽略2~4的步骤
+请确认计算机内已安装 `Node` 与 `npm` 
+> git clone https://github.com/Jingyi21/LandingPage.git
 2. 在命令行窗口中定位项目根目录,然后输入以下命令以安装所需要的模块
 > npm install
 3. 使用以下命令运行项目
@@ -25,7 +26,7 @@
 ## 如何上传到个人服务器或虚拟主机中
 共通:请确认已经编译项目
 
-复制`index.html`,`style.css`,`main.js`,`Chelsea.ttf`(可选)
+复制`index.html`,`main.js`,`Chelsea.ttf`(可选)
 
 将文件粘贴到 `public_html` 或根目录中,即可使用 `yourname.site` 的方式进行访问
 
@@ -33,8 +34,7 @@
 
 ## 食用方法
 
-### V2.0 / TY V1.0
-所有可修改部分均位于 `option.js` 中 
+所有可修改部分均位于 `components/js/option.js` 中 
 
 ### 可修改部分
 - 标题栏标题
@@ -44,3 +44,20 @@
 
 **内置 Font-Awesome, 可直接使用**
 
+## 更新日志
+
+### 1.2.0
+
+- 整合本地 CSS ,并采取编译后压缩 JS 文件
+
+### 1.1.1
+
+- 更换 CSS 库链接 CDN(BootCDN → 七牛云)
+
+### 1.1.0
+
+- 增加一言
+
+## 许可
+
+MIT License
