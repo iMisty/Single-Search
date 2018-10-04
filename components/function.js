@@ -34,5 +34,5 @@ if(removeRibbon.removeHitokoto == true){
 }
 
 if(window.console){
-    console.log('\n %c TY-Landing Page v1.0 %c by Kannazuki Miya |  https://miya.moe ','color:#dcf2f8;background:#23b7e5;padding:5px 0;','color:#eee;background:rgba(252,248,227,.3);padding:5px 0;')
+    console.log('\n %c TY-Landing Page v1.1.1 %c by Kannazuki Miya |  https://miya.moe ','color:#dcf2f8;background:#23b7e5;padding:5px 0;','color:#eee;background:rgba(252,248,227,.3);padding:5px 0;')
 }
