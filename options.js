@@ -66,7 +66,7 @@ var getWrap = {
         value: '使用说明'
     },{
         icon: 'fa fa-terminal',
-        link: 'https://jingyi21.github.io/LandingPage/LandingPage%20v1.0/index.html',
+        link: 'https://shizu17.pw/old',
         value: '另一个版本Demo'
     }]
 }
