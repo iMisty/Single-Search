@@ -1,6 +1,6 @@
 {
-  "name": "LandingPage",
-  "version": "1.1.0",
+  "name": "landingpage",
+  "version": "1.1.1",
   "dependencies": {
     "expose-loader": "^0.7.5",
     "jquery": "^3.3.1"
