@@ -4,7 +4,7 @@ import { setTemplate } from './template';
 import { hitokoto } from './hitokoto';
 import { css } from '../css/style.css';
 
-$(document).ready(function(){
+$(document).ready(() => {
      changeBG();
      removeLoading();
      frontWorld();
@@ -35,5 +35,5 @@ if(removeRibbon.removeHitokoto == true){
 }
 
 if(window.console){
-    console.log('\n %c TY-Landing Page v1.2.0 %c by Kannazuki Miya |  https://miya.moe ','color:#dcf2f8;background:#23b7e5;padding:5px 0;','color:#eee;background:rgba(252,248,227,.3);padding:5px 0;')
+    console.log('\n %c TY-Landing Page v1.3.0 %c by Kannazuki Miya |  https://miya.moe ','color:#dcf2f8;background:#23b7e5;padding:5px 0;','color:#eee;background:rgba(252,248,227,.3);padding:5px 0;')
 }
