@@ -58,11 +58,11 @@ var getWrap = {
      */
     links: [{
         icon: 'fa fa-home',
-        link: 'https://github.com/Jingyi21/LandingPage',
+        link: 'https://github.com/Miya-Yukarin/LandingPage',
         value: 'GitHub'
     },{
         icon: 'fa fa-paper-plane',
-        link: 'https://github.com/Jingyi21/LandingPage/blob/master/README.md',
+        link: 'https://github.com/Miya-Yukarin/LandingPage/blob/master/README.md',
         value: '使用说明'
     },{
         icon: 'fa fa-terminal',
