@@ -4,7 +4,7 @@
 一个静态的可供做为导航页面使用的落地页
 
 ## Demo 地址
-[Demo](https://Miya-Yukarin.github.io/LandingPage/)
+[Demo](https://iMisty.github.io/LandingPage/)
 
 ## 包含内容
 
@@ -16,7 +16,7 @@
 ## 使用方法
 1. Clone 这个项目或 Download ZIP 的方式下载压缩包
 请确认计算机内已安装 `Node` 与 `npm` 
-> git clone https://github.com/Miya-Yukarin/LandingPage.git
+> git clone https://github.com/iMisty/LandingPage.git
 2. 在命令行窗口中定位项目根目录,然后输入以下命令以安装所需要的模块
 > npm install
 3. 使用以下命令运行项目
@@ -48,7 +48,7 @@
 
 ### 1.2.0
 
-- 整合本地 CSS ,并采取编译后压缩 JS 文件
+- 整合本地 CSS ,并采取编译后压缩 JS 文件
 
 ### 1.1.1
 
