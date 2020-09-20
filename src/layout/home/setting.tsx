@@ -44,6 +44,9 @@ export default class HomeSetting extends Vue {
       const info = JSON.parse(userdata);
       this.setting = info;
     }
+    if (!this.setting.avatar) {
+      this.setting.avatar = require('@/assets/female.svg');
+    }
     return true;
   }
 

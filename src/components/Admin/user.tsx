@@ -8,8 +8,7 @@ import SettingMenu from '@/model/admin-user';
 })
 export default class AdminUser extends Vue {
   // 头像设置
-  private avatar: string =
-    this.$store.state.user.avatar || require('@/assets/female.svg');
+  private avatar: string = require('@/assets/female.svg');
 
   // 移动菜单
   private settingMenu: SettingMenu[] = [
