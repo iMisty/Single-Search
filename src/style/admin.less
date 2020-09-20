@@ -1,0 +1,490 @@
+/*
+ * @Author: Miya
+ * @Version: 1.0
+ * @Date: 2020-09-19 03:37:48
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-09-20 05:40:52
+ * @Description: 后台管理系统CSS
+ * @FilePath: /Single-Search/src/style/admin.less
+ */
+@import './global/var.less';
+
+.admin {
+  display: grid;
+  grid-template-columns: minmax(4rem, 8rem) 1fr;
+  grid-template-rows: 4rem auto;
+  background: #f3f4f5;
+
+  // 顶部栏
+  &__top {
+    // 顶部栏
+    grid-column: span 2;
+    .layout-flex(flex, row, flex-end, center);
+    width: 100%;
+    height: 4rem;
+    padding: 1rem 2rem 1rem 4rem;
+    z-index: 2;
+
+    // 顶部logo
+    &--logo {
+      .layout-flex(flex, row, flex-start, center);
+      height: 2rem;
+
+      img {
+        height: 100%;
+      }
+    }
+
+    // 顶部用户
+    &--user {
+      position: relative;
+      // 头像
+      &--avatar {
+        width: 2rem;
+      }
+      // 菜单选项组
+      &--menu {
+        position: absolute;
+        top: 2.5rem;
+        left: -100%;
+        width: 6rem;
+        z-index: 2;
+        text-align: center;
+        background-color: #fff;
+        box-shadow: 0 0px 2px 0px rgba(0, 0, 0, 0.18);
+        &::after {
+          content: '';
+          position: absolute;
+          top: -0.5rem;
+          left: 50%;
+          width: 1rem;
+          height: 1rem;
+          background-color: #fff;
+          transform: translateX(-50%) rotate(45deg);
+          z-index: 1;
+          box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.18);
+        }
+      }
+      // 菜单项
+      &--setting {
+        padding: 1rem 0.5rem;
+        position: relative;
+        z-index: 4;
+        background-color: #fff;
+        cursor: default;
+      }
+    }
+  }
+
+  // 左边栏
+  &__left {
+    .layout-flex(flex, column, flex-start, center);
+    margin-top: 2rem;
+    min-width: 8rem;
+    height: calc(100% - 4rem);
+    .router-link-exact-active {
+      background-color: #fff;
+      border-radius: @border-radius 0 0 @border-radius;
+    }
+
+    // 导航组
+    .icon {
+      .layout-flex(flex, row, flex-start, center, nowrap);
+      width: 100%;
+      padding: 1rem;
+      cursor: default;
+    }
+
+    // 图标
+    i&--router--icon {
+      font-size: 1.5rem;
+      color: #595bb3;
+    }
+
+    // 文字
+    &--router--text {
+      margin-left: 1rem;
+      font-size: 0.8em;
+      color: #595b83;
+    }
+  }
+
+  // 内容栏
+  &__index {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  &__wrap {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    justify-items: center;
+    width: calc(100vw - 8rem);
+    min-height: calc(100vh - 4rem);
+    background-color: #fff;
+    border-radius: @border-radius @border-radius 0 0;
+
+    // 卡片栏
+    &--puzzle {
+      display: grid;
+      justify-content: center;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 8rem;
+      grid-gap: 1rem;
+      padding: 1rem;
+    }
+
+    // 卡片
+    .puzzle {
+      &-wrap {
+        padding: 1rem;
+        background-color: #fff;
+        border-radius: @border-radius;
+        box-shadow: @card-shadow;
+      }
+      &-title {
+        padding: 0.25rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: 0.54px;
+      }
+      &-text {
+        font-size: 0.8rem;
+        line-height: 1.6;
+      }
+    }
+
+    &--puzzle--sum {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-gap: 1rem;
+      height: 100%;
+    }
+  }
+
+  // 提交按钮
+  &__submit {
+    .layout-flex(flex, row, flex-start, center);
+  }
+
+  // 预览图大小
+  &__preview {
+    max-width: 15rem;
+  }
+
+  // 用户页
+  &__user {
+    input {
+      padding: 0.5rem;
+      width: 100%;
+      color: @sec-text;
+      border: 1px solid #ddd;
+      border-radius: @border-radius;
+    }
+
+    // 头像部分
+    &--avatar {
+      &--image {
+        margin-top: 1rem;
+      }
+    }
+    &--setting {
+      margin: 1rem 0;
+      // 标题部分
+      &--title {
+        .layout-flex(flex, row, flex-start, center);
+        margin: 0.25rem 0;
+      }
+      // 指引部分
+      &--tips {
+        .layout-flex(flex, row, flex-start, center);
+        // tips图标
+        &--image {
+          width: 1rem;
+          height: 1rem;
+          margin: 0 0.5rem;
+        }
+        // 文字部分
+        &--text {
+          top: 0;
+          left: 2rem;
+          max-width: 20rem;
+          font-size: 0.875rem;
+          color: #888;
+          opacity: 0;
+          transition-duration: 0.4s;
+        }
+        // 聚焦状态
+        &:hover {
+          & > .admin__user--setting--tips--text {
+            opacity: 1;
+          }
+        }
+      }
+
+      // 选择列表
+      &--select {
+        padding: 0.5em;
+        padding-right: 2em;
+        min-width: 10rem;
+        border: none;
+        cursor: pointer;
+        background-image: none;
+        // appearance: none;
+        text-indent: 0.01px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        &:focus {
+          outline: none;
+        }
+      }
+
+      // 选项框
+      &--checkpoint {
+        &--item {
+          .layout-flex(flex, row);
+          p {
+            margin: 0 0.25rem;
+          }
+        }
+        input&--switch {
+          width: auto;
+        }
+      }
+    }
+
+    // 头像部分
+    &--avatar {
+      &--image {
+        max-width: 10rem;
+      }
+    }
+  }
+
+  // 链接页
+  &__link {
+    width: 100%;
+    height: calc(100vh - 4rem);
+    overflow-y: auto;
+
+    // 无数据情况
+    &--nodata {
+      margin: 0 auto;
+      width: 36vw;
+      img {
+        filter: opacity(0.8);
+      }
+      &--text {
+        padding: 0.5rem 0;
+        font-size: 1.2rem;
+        text-align: center;
+        line-height: 1.6;
+        color: #525f7f;
+      }
+    }
+
+    // 列表
+    &--list {
+      position: relative;
+      padding: 1rem;
+      margin: 0 auto;
+      max-width: 50rem;
+    }
+
+    // 表格布局
+    &--table {
+      position: relative;
+      margin: 2rem 0;
+      padding-bottom: 4rem;
+      width: 100%;
+
+      input {
+        width: 100%;
+        line-height: 1.6;
+        color: #525f7f;
+        &::placeholder {
+          color: #8898aa;
+        }
+      }
+
+      // 标题
+      &--title {
+        padding: 0.5rem;
+        color: #32325d;
+        font-size: 1rem;
+      }
+
+      // 内容区
+      &--wrap {
+        &:nth-child(even) {
+          background-color: #f4f5f7;
+        }
+      }
+
+      // 图标设置
+      &--icon {
+        padding: 0.5rem;
+        width: 16%;
+      }
+
+      // 链接设置
+      &--link {
+        padding: 0.5rem;
+        width: 48%;
+      }
+
+      // 链接文字设置
+      &--text {
+        padding: 0.5rem;
+        width: 28%;
+      }
+
+      // 设置按钮
+      &--setting {
+        .layout-flex(flex, row, space-around, center, nowrap);
+        padding: 0.5rem;
+        color: #32325d;
+        &-button {
+          width: 1.5rem;
+        }
+      }
+    }
+
+    // 主控制按钮组
+    &--options {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      .layout-flex(flex, row, flex-start, center, nowrap);
+      width: 100%;
+      // 无数据
+      &.no-data {
+        justify-content: center;
+      }
+      // 位于末尾
+      &.on-footer {
+        position: static;
+        justify-content: center;
+      }
+    }
+  }
+
+  // 设置页
+  &__settings {
+    input {
+      margin: 0.25rem 0;
+      padding: 0.5rem;
+      width: 100%;
+      color: rgba(0, 0, 0, 0.54);
+      border: 1px solid #ddd;
+      border-radius: 0.25rem;
+    }
+
+    // 选项卡标题
+    &--title {
+      .layout-flex(flex, row, center, center, nowrap);
+      padding: 1rem 0;
+      &--text {
+        position: relative;
+        .layout-flex(flex, row, flex-start, center, nowrap);
+        margin: 0 0.5rem;
+        line-height: 1;
+        cursor: default;
+        &.router-link-active{
+          color: #595bb3;
+        }
+      }
+    }
+  }
+}
+
+.content {
+  width: 60vw;
+  height: calc(100vh - 7rem);
+  overflow-y: auto;
+}
+
+// 可视化链接
+.linksum {
+  display: grid;
+  grid-template-rows: 4fr 6fr;
+  grid-gap: 1rem;
+  height: 100%;
+
+  // 标题
+  &__title {
+    color: #888;
+    font-size: 1rem;
+    letter-spacing: 0.54px;
+  }
+
+  // 数字
+  &__sum {
+    padding-left: 0.5rem;
+    justify-self: center;
+    align-self: center;
+    line-height: 0.8;
+    font-size: 2.5rem;
+    font-weight: 600;
+    border-left: 6px solid;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  // 左部分
+  // 限制4rem
+  .admin__left {
+    min-width: 4rem;
+    // 图标居中
+    .icon {
+      justify-content: center;
+    }
+    // 不显示文字
+    &--router--text {
+      display: none;
+    }
+  }
+  // 主体部分
+  .admin__wrap {
+    width: calc(100vw - 4rem);
+    // 首页模块占满屏幕
+    &--puzzle {
+      justify-content: stretch;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+}
+
+@media screen and (max-width: 520px) {
+  .admin__wrap--puzzle {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/**************** 模块大小控制 ******************/
+.row-2 {
+  grid-row: span 2;
+}
+
+.row-3 {
+  grid-row: span 3;
+}
+
+.row-4 {
+  grid-row: span 4;
+}
+
+.column-2 {
+  grid-column: span 2;
+}
+
+.column-3 {
+  grid-column: span 3;
+}
+
+.column-4 {
+  grid-column: span 4;
+}

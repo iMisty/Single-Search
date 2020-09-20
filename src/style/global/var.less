@@ -1,0 +1,76 @@
+/*
+ * @Description: 使用的文字变量
+ * @version: 1.0.0
+ * @Author: Miya
+ * @Date: 2020-05-26 18:18:46
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-09-17 10:45:02
+ */
+// 白天模式文字颜色
+@pri-text: rgba(0, 0, 0, 0.87);
+@sec-text: rgba(0, 0, 0, 0.54);
+@line: rgba(0, 0, 0, 0.18);
+@hover: rgba(0, 0, 0, 0.08);
+// 暗黑模式文字颜色
+@pri-text-dark: #eaeaea;
+@sec-text-dark: #c1c1c1;
+
+// 首页背景
+@pri-bgcolor: #222d46;
+
+// 毛玻璃背景
+.blur-bg-light(@color: rgba(226,226,226,0.38), @blur: 8px) {
+  background-color: @color;
+  backdrop-filter: blur(@blur);
+}
+
+.blur-bg-dark(@color: rgba(0, 0, 0, 0.38), @blur: 8px) {
+  background-color: @color;
+  backdrop-filter: blur(@blur);
+}
+
+// 毛玻璃背景组件背景色
+@blur-component-color: rgba(255, 255, 255, 0.28);
+
+// 主体色
+@pri-color: rgba(0, 98, 183, 1);
+
+@card-shadow: 0 4px 32px rgba(50, 50, 93, 0.1);
+@box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2),
+  0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12);
+
+// 圆角
+@border-radius: .25rem;
+// 动画时长
+@transition-duration: 0.4s;
+
+// Flex布局混合
+.layout-flex(@display, @arrange, @horizon: flex-start, @vertial: stretch, @allowwrap: wrap) {
+  display: @display;
+  flex-direction: @arrange;
+  flex-wrap: @allowwrap;
+  justify-content: @horizon;
+  align-items: @vertial;
+}
+
+/*********************************************
+ *                                           *
+ *                   后台使用                 *
+ *                                           *
+**********************************************/
+// result => 条纹颜色
+.purple {
+  border-color: #7b61b2;
+}
+
+.green {
+  border-color: #3aafae;
+}
+
+.orange {
+  border-color: #ffa751;
+}
+
+.red {
+  border-color: #ff5151;
+}
