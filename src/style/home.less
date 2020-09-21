@@ -1,5 +1,7 @@
 @import './global/var.less';
 
+@primary-background-color: #172b4d;
+
 .home {
   display: grid;
   grid-template-rows: 4rem 4fr 1fr;
@@ -8,10 +10,7 @@
 
   // 顶部
   &__top {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
+    .layout-flex(flex,row,flex-end,center);
     padding: 1rem;
   }
   // 顶部图标
@@ -97,10 +96,10 @@
       // 搜索栏内容
       &-wrap {
         .layout-flex(inline-flex, row, space-between, center, nowrap);
-        .blur-bg-light();
         position: relative;
         padding: 0.5rem;
         width: 64vw;
+        border: 2px solid fade(@primary-background-color,20%) ;
         border-radius: @border-radius;
         transition-duration: @transition-duration;
         @media screen and (max-width: 768px) {
@@ -131,7 +130,6 @@
 
         // 搜索引擎选择
         .choose-engine {
-          .blur-bg-light();
           display: none;
           position: absolute;
           top: 108%;
@@ -139,6 +137,8 @@
           transform: translateX(-50%);
           padding: 0.5rem;
           z-index: 16;
+          background-color: #f3f4f5;
+          box-shadow: @card-shadow;
           border-radius: @border-radius;
 
           &::after {
@@ -215,45 +215,6 @@
       }
     }
 
-    // 搜索引擎联想
-    .associate {
-      .blur-bg-light(rgba(255, 255, 255, 0.54));
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      border-radius: @border-radius;
-
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        border-radius: inherit;
-        filter: blur(8px);
-      }
-
-      &-list {
-        position: relative;
-        z-index: 2;
-      }
-
-      &-item {
-        margin: 0.5rem;
-        padding: 0.5rem;
-        cursor: default;
-        color: @pri-text;
-        border-radius: @border-radius;
-
-        &:hover {
-          background-color: @blur-component-color;
-        }
-      }
-    }
-
     // 一言
     .hitokoto {
       color: @pri-text-dark;
@@ -262,13 +223,13 @@
 
   // 右边栏区域
   &__rightbar {
-    .blur-bg-light();
     position: fixed;
     top: 0;
     right: 0;
     width: 28rem;
     height: 100vh;
     z-index: 5;
+    background-color: @primary-background-color;
     transform: translateX(100%);
     transition-duration: @transition-duration / 2;
     @media screen and (max-width: 768px) {

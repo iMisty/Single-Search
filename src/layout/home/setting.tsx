@@ -5,6 +5,7 @@ import online from '@/components/Home/online';
 import offline from '@/components/Home/offline';
 import User from '@/model/user';
 import { TOKEN_DATA, USER_DATA } from '@/config/dataname.config';
+import { userInfo } from '@/config/user.config';
 
 @Component({
   components: {
@@ -16,12 +17,7 @@ import { TOKEN_DATA, USER_DATA } from '@/config/dataname.config';
 export default class HomeSetting extends Vue {
   // data
   // 从LocalStorage读取
-  private setting: User = {
-    name: '',
-    sex: '',
-    introduce: '',
-    avatar: ''
-  };
+  private setting: User = userInfo;
 
   // 获取用户是否已登录
   private isLogin: boolean = false;
@@ -91,7 +87,7 @@ export default class HomeSetting extends Vue {
           <m-card className="home__setting--user-online">
             <online
               name={this.setting.name}
-              sex={this.setting.sex}
+              normal_avatar={this.setting.normal_avatar}
               introduce={this.setting.introduce}
               avatar={this.setting.avatar}
               onLogout={this.handleLogout}

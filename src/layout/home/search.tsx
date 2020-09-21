@@ -4,14 +4,12 @@
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-20 08:31:14
+ * @LastEditTime: 2020-09-21 12:24:34
  */
 import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 import svgicon from '@/components/svgicon';
 import engine from '@/components/Home/engine';
-import associate from '@/components/Home/associate';
 import { getEngineValue } from '@/utils/getEngineValue.ts';
-import { getExtraData } from '@/utils/getSearchExtraData';
 import { searchData } from '@/config/search.config';
 import { USER_DATA } from '@/config/dataname.config';
 import { submitSearch } from '@/utils/submitSearch';
@@ -19,7 +17,6 @@ import { submitSearch } from '@/utils/submitSearch';
   components: {
     engine,
     svgicon,
-    associate
   }
 })
 export default class Search extends Vue {
@@ -83,7 +80,6 @@ export default class Search extends Vue {
     const defaultSearch = localStorage.getItem(USER_DATA);
     if (defaultSearch !== null) {
       const search = JSON.parse(defaultSearch).default_search;
-      console.log(`默认搜索引擎：${search}`);
       this.choose = search;
     }
   }
@@ -98,7 +94,6 @@ export default class Search extends Vue {
     const data = getEngineValue(index);
     this.choose = data;
     this.$store.commit('set_search_engine', data);
-    console.log(`选中的搜索引擎:${this.$store.state.status.search_engine}`);
     this.extraParam = this.searchChoose[index].extra;
     this.searchMenu = false;
   }
@@ -113,28 +108,10 @@ export default class Search extends Vue {
     const choose = this.choose;
     const text = this.searchText;
     if (e.keyCode === 13) {
-      console.log(choose);
-      console.log(text);
       window.open(submitSearch(choose!, text));
-      // this.$emit('submit', this.choose, this.searchText, this.extraParam);
       return true;
     }
     return false;
-  }
-
-  /**
-   * @name: getExtraValue
-   * @msg: 提交欲搜索的关键词
-   * @param {type}
-   * @return: void
-   */
-  private async getExtraValue() {
-    // TODO: 暂时写死 => 用于控制当前选择的搜索引擎
-    const eValue = 'baidu';
-    const sValue = this.searchText;
-    const res = await getExtraData(eValue!, sValue);
-
-    this.extraDatas = res;
   }
 
   private mounted() {
@@ -204,14 +181,8 @@ export default class Search extends Vue {
               onClick={() => this.setInputStatus(true)}
               onBlur={() => this.setInputStatus(false)}
               onKeydown={(e: any) => this.submitSearchText(e)}
-              // onInput={this.getExtraValue}
             />
           </section>
-          {this.extraDatas[0] !== '' ? (
-            <section class="search--bar-suomi">
-              <associate data={this.extraDatas}></associate>
-            </section>
-          ) : null}
           <section
             class="search--bar-submit"
             onClick={() => this.submitSearchText}

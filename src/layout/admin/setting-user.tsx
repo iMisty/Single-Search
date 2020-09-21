@@ -26,7 +26,7 @@ export default class SettingUser extends Vue {
   // 原始数据
   private userData: User = {
     name: 'Miya',
-    sex: 'Female',
+    normal_avatar: 'Female',
     avatar: '',
     introduce: '一个测试用账号',
     dark_style: false,
@@ -126,7 +126,7 @@ export default class SettingUser extends Vue {
             </section>
             <select
               class="admin__user--setting--select"
-              v-model={this.userData.sex}
+              v-model={this.userData.normal_avatar}
             >
               <option value="undefined">-- 就不告诉你 --</option>
               <option value="male">Male</option>

@@ -4,9 +4,9 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-19 16:46:54
+ * @LastEditTime: 2020-09-21 12:18:17
  */
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 import svgicon from '@/components/svgicon.tsx';
 import listitem from '@/components/Home/listitem.tsx';
 import { LINK_DATA } from '@/config/dataname.config';
