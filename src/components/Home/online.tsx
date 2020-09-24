@@ -3,7 +3,7 @@
  * @Version: 1.0
  * @Date: 2020-08-26 01:06:24
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-21 12:08:20
+ * @LastEditTime: 2020-09-24 17:44:35
  * @Description: 用户在线状态模块
  * @FilePath: \Single-Search-Front\src\components\Home\online.tsx
  */
@@ -90,13 +90,13 @@ export default class UserSetting extends Vue {
               class="setting__wrap--information--button"
               onClickevent={this.goAdmin}
             >
-              Admin
+              进入后台
             </m-button>
             <m-button
               class="setting__wrap--information--button"
               onClickevent={this.logout}
             >
-              Logout
+              退出登录
             </m-button>
           </section>
         </article>
