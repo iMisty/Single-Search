@@ -10,7 +10,7 @@
 
   // 顶部
   &__top {
-    .layout-flex(flex,row,flex-end,center);
+    .layout-flex(flex, row, flex-end, center);
     padding: 1rem;
   }
   // 顶部图标
@@ -99,7 +99,7 @@
         position: relative;
         padding: 0.5rem;
         width: 64vw;
-        border: 2px solid fade(@primary-background-color,20%) ;
+        border: 1px solid fade(@primary-background-color, 20%);
         border-radius: @border-radius;
         transition-duration: @transition-duration;
         @media screen and (max-width: 768px) {
@@ -135,7 +135,8 @@
           top: 108%;
           left: 50%;
           transform: translateX(-50%);
-          padding: 0.5rem;
+          padding: 0.5rem 0;
+          width: 6rem;
           z-index: 16;
           background-color: #f3f4f5;
           box-shadow: @card-shadow;
@@ -156,16 +157,20 @@
 
           &-wrap {
             .layout-flex(flex, row, center, center, nowrap);
-            width: 3rem;
-            height: 3rem;
             padding: 0.5rem;
             font-size: 1.5em;
-            color: #fff;
+            color: @pri-text;
             border-radius: @border-radius;
             transition-duration: @transition-duration / 2;
 
+            img {
+              width: 1.5rem;
+              height: 1.5rem;
+            }
+
             &:hover {
-              .blur-bg-dark(@blur-component-color);
+              color: @pri-text-dark;
+              background-color: @primary-background-color;
               transition-duration: @transition-duration / 2;
             }
 

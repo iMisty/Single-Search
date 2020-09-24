@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-21 12:01:45
+ * @LastEditTime: 2020-09-24 18:19:34
 -->
 <template>
   <div class="home">
@@ -128,11 +128,9 @@ export default class Home extends Vue {
     const setting: string | null = localStorage.getItem('s_user_setting');
 
     if (user !== null) {
-      // @ts-ignore
       this.userData = JSON.parse(user);
     }
     if (setting !== null) {
-      // @ts-ignore
       this.userSetting = JSON.parse(setting);
     }
   }

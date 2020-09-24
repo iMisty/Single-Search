@@ -3,9 +3,9 @@
  * @Version: 1.0
  * @Date: 2020-09-20 00:31:34
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-20 06:49:56
+ * @LastEditTime: 2020-09-24 16:25:08
  * @Description: 设置页面系统设置部分
- * @FilePath: /Single-Search/src/layout/admin/setting-system.tsx
+ * @FilePath: \Single-Search-Front\src\layout\admin\setting-system.tsx
  */
 import { Component, Vue } from 'vue-property-decorator';
 // checkbox
@@ -57,11 +57,6 @@ export default class SettingsAdmin extends Vue {
     }
   }
 
-  // 修改毛玻璃支持
-  private setBlurBackgroundStatus() {
-    this.settingData.blur_style = !this.settingData.blur_style;
-  }
-
   // 修改一言
   private setHitokotoStatus() {
     this.settingData.hitokoto = !this.settingData.hitokoto;
@@ -86,28 +81,6 @@ export default class SettingsAdmin extends Vue {
     return (
       <div class="content">
         <div class="admin__settings">
-          {/* 首页背景图片 */}
-          <div class="admin__user--setting">
-            <section class="admin__user--setting--title">
-              <h5>背景图片</h5>
-              <section class="admin__user--setting--tips">
-                <img
-                  class="admin__user--setting--tips--image"
-                  src={this.tipsicon}
-                />
-                <div class="admin__user--setting--tips--text">依然没什么用</div>
-              </section>
-            </section>
-            <input
-              type="text"
-              name="setting"
-              value={this.settingData.background}
-              v-model={this.settingData.background}
-            />
-            <div class="admin__preview">
-              <img src={this.settingData.background} alt="" />
-            </div>
-          </div>
           {/* 首页 logo */}
           <div class="admin__user--setting">
             <section class="admin__user--setting--title">
@@ -127,12 +100,6 @@ export default class SettingsAdmin extends Vue {
               v-model={this.settingData.search_logo}
             />
           </div>
-          <input-checkbox
-            title="毛玻璃效果"
-            tiptext={true}
-            status={this.settingData.blur_style}
-            onClickevent={() => this.setBlurBackgroundStatus()}
-          ></input-checkbox>
           <input-checkbox
             title="一言"
             tiptext={false}

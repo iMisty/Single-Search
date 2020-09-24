@@ -1,10 +1,10 @@
 /*
  * @Author: Miya
  * @Date: 2020-09-18 17:23:02
- * @LastEditTime: 2020-09-18 18:03:15
+ * @LastEditTime: 2020-09-24 18:08:01
  * @LastEditors: Miya
  * @Description: 用户数据
- * @FilePath: \Single-Search\src\config\user.config.ts
+ * @FilePath: \Single-Search-Front\src\config\user.config.ts
  * @Version: 1.0
  */
 export const userInfo = {
@@ -19,5 +19,5 @@ export const userInfo = {
   // 默认搜索引擎
   default_search: 'bing',
   // 是否使用暗黑模式
-  dark_style: false
+  dark_style: true
 };
