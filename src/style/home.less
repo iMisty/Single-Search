@@ -28,7 +28,7 @@
       left: 0;
       width: 1.6rem;
       height: 1px;
-      background-color: #cacaca;
+      background-color: @pri-text;
       transition-duration: 0.4s;
     }
 
@@ -222,7 +222,7 @@
 
     // 一言
     .hitokoto {
-      color: @pri-text-dark;
+      color: @pri-text;
     }
   }
 
@@ -424,11 +424,11 @@
 
         &--title {
           font-weight: normal;
-          color: @pri-text;
+          color: @pri-text-dark;
         }
 
         &--text {
-          color: @sec-text;
+          color: @sec-text-dark;
         }
 
         &--button {
@@ -506,9 +506,9 @@
     // 版权信息
     .copyright {
       padding: 1rem;
-      color: #999;
+      color: @pri-text;
       a {
-        color: #666;
+        color: @sec-text;
       }
     }
   }

@@ -1,4 +1,69 @@
 @pri-background: #222;
 @sec-background: #444;
-@pri-text: #eee;
-@sec-text: #888;
+@pri-text: #bbb;
+@sec-text: #666;
+
+.dark {
+  background-color: @pri-background;
+  // 右上角图标
+  .home .list--button {
+    filter: invert(0.6);
+  }
+  // 中部
+  .home__medium {
+    // 搜索框
+    .search--bar-wrap {
+      border-color: @pri-text;
+    }
+    // 搜索引擎选择框
+    .search--bar-choose .choose-engine {
+      background-color: @sec-background;
+    }
+    // 搜索引擎选择框:hover
+    .search--bar-choose .choose-engine-wrap {
+      color: @pri-text;
+    }
+    // 搜索框输入框
+    .search--bar-input {
+      input {
+        color: @pri-text;
+        &::placeholder {
+          color: @sec-text;
+        }
+      }
+    }
+    // 一言
+    .hitokoto {
+      color: @pri-text;
+    }
+  }
+  // 底部
+  .home__bottom {
+    // 版权信息
+    .copyright {
+      color: @pri-text;
+      a {
+        color: @sec-text;
+      }
+    }
+  }
+
+  // 后台
+  .admin {
+    background-color: @pri-background;
+    // 内容部分
+    &__wrap {
+      background-color: lighten(@pri-background, 5%);
+      // 首页卡片式数据可视化
+      .puzzle-wrap {
+        background-color: @sec-background;
+      }
+    }
+    // 左侧选中高亮
+    &__left {
+      .router-link-exact-active {
+        background-color: lighten(@pri-background, 5%);
+      }
+    }
+  }
+}
