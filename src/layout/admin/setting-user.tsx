@@ -2,9 +2,9 @@
  * @Author: Miya
  * @Date: 2020-07-23 15:38:12
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-20 05:40:16
+ * @LastEditTime: 2020-09-25 12:04:33
  * @Description: 设置页面用户设置部分
- * @FilePath: /Single-Search/src/layout/admin/setting-user.tsx
+ * @FilePath: \Single-Search-Front\src\layout\admin\setting-user.tsx
  */
 import { Component, Vue } from 'vue-property-decorator';
 import User from '@/model/user';
@@ -184,7 +184,7 @@ export default class SettingUser extends Vue {
                   src={this.tipsicon}
                 />
                 <div class="admin__user--setting--tips--text">
-                  暗色模式尚未完成所以这个没法选择
+                  亮色/暗色调整
                 </div>
               </section>
             </section>
@@ -192,7 +192,6 @@ export default class SettingUser extends Vue {
               <section class="admin__user--setting--checkpoint--item">
                 <m-switch
                   status={this.userData.dark_style}
-                  disabled="false"
                   onClickevent={() => this.changeDarkStyle()}
                 ></m-switch>
               </section>

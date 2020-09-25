@@ -96,9 +96,9 @@ export default class AdminLink extends Vue {
   }) {
     const ids = e.target.getAttribute('data-id');
     const index = e.target.getAttribute('data-index');
+    console.log(`对应数据：${JSON.stringify(this.linkData[ids].items[index])}`);
     this.linkData[ids].items.splice(index, 1);
     this.handleSave();
-    console.log(`对应数据：${JSON.stringify(this.linkData[ids].items[index])}`);
   }
 
   /**
@@ -135,7 +135,7 @@ export default class AdminLink extends Vue {
                     <th class="admin__link--table--setting">疑问</th>
                   </tr>
                   <tr class="admin__link--table--wrap">
-                    <td class="admin__link--table--icon">
+                    <td class="admin__link--table--input admin__link--table--icon">
                       <input
                         value={item.icon}
                         v-model={item.icon}
@@ -143,7 +143,7 @@ export default class AdminLink extends Vue {
                         onBlur={() => this.handleSave()}
                       />
                     </td>
-                    <td class="admin__link--table--link">
+                    <td class="admin__link--table--input admin__link--table--link">
                       <input
                         value={item.name}
                         v-model={item.name}
@@ -151,7 +151,7 @@ export default class AdminLink extends Vue {
                         onBlur={() => this.handleSave()}
                       />
                     </td>
-                    <td class="admin__link--table--text">
+                    <td class="admin__link--table--input admin__link--table--text">
                       <input
                         value={item.titleIconColor}
                         v-model={item.titleIconColor}
@@ -159,7 +159,7 @@ export default class AdminLink extends Vue {
                         onBlur={() => this.handleSave()}
                       />
                     </td>
-                    <td class="admin__link--table--setting">
+                    <td class="admin__link--table--input admin__link--table--setting">
                       <div class="admin__link--table--setting-button">
                         <img src={this.questionIcon} alt="" />
                       </div>
@@ -183,7 +183,7 @@ export default class AdminLink extends Vue {
                           data-id={index}
                           data-index={childIndex}
                         >
-                          <td class="admin__link--table--icon">
+                          <td class="admin__link--table--input admin__link--table--icon">
                             <input
                               value={childItem.icon}
                               v-model={childItem.icon}
@@ -191,7 +191,7 @@ export default class AdminLink extends Vue {
                               onBlur={() => this.handleSave()}
                             />
                           </td>
-                          <td class="admin__link--table--link">
+                          <td class="admin__link--table--input admin__link--table--link">
                             <input
                               value={childItem.link}
                               v-model={childItem.link}
@@ -199,7 +199,7 @@ export default class AdminLink extends Vue {
                               onBlur={() => this.handleSave()}
                             />
                           </td>
-                          <td class="admin__link--table--text">
+                          <td class="admin__link--table--input admin__link--table--text">
                             <input
                               value={childItem.text}
                               v-model={childItem.text}
@@ -207,7 +207,7 @@ export default class AdminLink extends Vue {
                               onBlur={() => this.handleSave()}
                             />
                           </td>
-                          <td class="admin__link--table--setting">
+                          <td class="admin__link--table--input admin__link--table--setting">
                             <div
                               class="admin__link--table--setting-button"
                               onClick={this.handleDeleteItem}
