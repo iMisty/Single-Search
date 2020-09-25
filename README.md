@@ -4,7 +4,7 @@
 
 beta1: 已在 release 提供下载,或者可以直接在此处(https://kagura.design/beta1) 玩耍(服务器位于海外，中国大陆用户可能速度略慢)。后台默认账号密码为（用户名：admin，密码：123456）
 
-beta2: 已在 release 提供下载，或者可以在此处(https://kagura.design) 玩耍，其余同beta1
+beta2: 已在 release 提供下载，或者可以在此处(https://kagura.design) 玩耍，其余同 beta1
 
 ## 填坑进度
 
@@ -20,9 +20,9 @@ beta2: 已在 release 提供下载，或者可以在此处(https://kagura.design
 
 数据目前分为两个版本：
 
-- 可直接部署使用单页版本，数据存储使用localStorage
+- 可直接部署使用单页版本，数据存储使用 localStorage
 
-- ~~直接部署在服务器版本，数据存储使用MongoDB~~ （未完成）
+- ~~直接部署在服务器版本，数据存储使用 MongoDB~~ （未完成）
 
 ## 如何部署
 
@@ -30,11 +30,11 @@ beta2: 已在 release 提供下载，或者可以在此处(https://kagura.design
 
 若想修改导航内容等:
 
-- 直接下载位于 `release` 内的localStorage版安装包
+- 直接下载位于 `release` 内的 localStorage 版安装包
 
 - 复制到服务器或虚拟空间或本地目录
 
-- 点击右上角个人信息图标登录至后台（默认账户admin,默认密码为123456）
+- 点击右上角个人信息图标登录至后台（默认账户 admin,默认密码为 123456）
 
 - 修改位于 `link` 选项卡下的链接，目前图标采用 `iconfont` 内图标
 
@@ -52,7 +52,7 @@ beta2: 已在 release 提供下载，或者可以在此处(https://kagura.design
 
   - 后台用组件： Admin
 
-  - Mermaid UI组件： Mermaid
+  - Mermaid UI 组件： Mermaid
 
 - config: 存放配置文件
 
@@ -107,6 +107,20 @@ CSS 格式化: Less
 - [x] 使用 Node 驱动
 
 - [ ] PHP 版本制作
+
+## 更新日志
+
+### 20200925 beta2
+
+- `Create` 夜间暗黑模式
+
+- `Update` 搜索引擎选择为图标+文字
+
+- `Fix` 登录页面无法通过回车登录
+
+- `Fix` 设置页面更改适配模式不生效
+
+- `Delete` 临时删除背景图片功能
 
 ## 其他
 
