@@ -10,7 +10,7 @@ export default interface User {
   // 昵称
   name: string;
   // 性别 => 之后删除
-  sex: string;
+  normal_avatar: string;
   // 头像
   avatar?: string;
   // 骚话

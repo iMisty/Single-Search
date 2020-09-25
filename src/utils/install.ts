@@ -3,9 +3,9 @@
  * @Version: 1.0
  * @Date: 2020-09-19 04:13:49
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-19 16:28:21
+ * @LastEditTime: 2020-09-25 12:23:44
  * @Description: 首次进入加载数据
- * @FilePath: /Single-Search/src/utils/install.ts
+ * @FilePath: \Single-Search-Front\src\utils\install.ts
  */
 import {
   ACCOUNT_DATA,
@@ -15,13 +15,14 @@ import {
 } from '@/config/dataname.config';
 import { navLink } from '@/config/link.config';
 import { loginData } from '@/config/login.config';
-import { setting } from '@/config/setting.config';
+import { settingInfo } from '@/config/setting.config';
 import { userInfo } from '@/config/user.config';
+import { getLocalStorage } from './GetLocalStorage';
 
 export const install = () => {
-  const user = localStorage.getItem(USER_DATA);
+  const user = getLocalStorage(USER_DATA);
   // 若 localStorage 中包含用户信息则判定为已开启过页面
-  if (user !== null) {
+  if (user !== '') {
     return false;
   }
   // 若 localStorage 中不包含用户信息,则判定为首次开启,加载默认数据
@@ -32,7 +33,7 @@ export const install = () => {
   // 登录信息
   const accountData = JSON.stringify(loginData);
   // 设置信息
-  const settingData = JSON.stringify(setting);
+  const settingData = JSON.stringify(settingInfo);
 
   // 写入信息
   localStorage.setItem(USER_DATA, userData);

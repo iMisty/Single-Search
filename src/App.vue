@@ -4,35 +4,48 @@
  * @Author: Miya
  * @Date: 2020-05-25 22:54:11
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-20 05:43:38
+ * @LastEditTime: 2020-09-25 16:50:53
 -->
 <template>
-  <div id="App">
+  <div id="App" :class="darkMode">
     <router-view></router-view>
-    <Background></Background>
     <external :src="iconsrc"></external>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import { LINK_ICON } from './config/external.config';
+import { Component, Vue, Watch } from 'vue-property-decorator';
+import { LINK_ICON } from '@/config/external.config';
+import { USER_DATA } from '@/config/dataname.config';
 import { install } from '@/utils/install';
-import Background from '@/layout/background.tsx';
+import { getLocalStorage } from '@/utils/GetLocalStorage';
 import external from '@/components/external';
 
 @Component({
   // 组件注册
   components: {
-    Background,
     external
   }
 })
 export default class App extends Vue {
+  private isDarkMode;
   private iconsrc = LINK_ICON;
+
+  private get darkMode() {
+    return this.isDarkMode ? 'dark' : 'light';
+  }
+
+  private getStyleData() {
+    const data = getLocalStorage(USER_DATA);
+    // @ts-ignore
+    const style = data.dark_style;
+    this.isDarkMode = style;
+    this.$store.state.is_darkmode = style;
+  }
 
   private created() {
     install();
+    this.getStyleData();
   }
 }
 </script>

@@ -1,10 +1,10 @@
 /*
  * @Author: Miya
  * @Date: 2020-09-18 17:23:02
- * @LastEditTime: 2020-09-18 18:03:15
+ * @LastEditTime: 2020-09-25 12:16:44
  * @LastEditors: Miya
  * @Description: 用户数据
- * @FilePath: \Single-Search\src\config\user.config.ts
+ * @FilePath: \Single-Search-Front\src\config\user.config.ts
  * @Version: 1.0
  */
 export const userInfo = {

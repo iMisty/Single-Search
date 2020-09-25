@@ -2,9 +2,9 @@
  * @Author: Miya
  * @Date: 2020-08-23 21:38:13
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-18 18:33:31
+ * @LastEditTime: 2020-09-24 17:44:46
  * @Description: 首页右侧边栏用于显示用户离线时
- * @FilePath: \Single-Search\src\components\Home\offline.tsx
+ * @FilePath: \Single-Search-Front\src\components\Home\offline.tsx
 */
 import { Component, Vue } from 'vue-property-decorator';
 import Button from '@/components/Mermaid/button';
@@ -30,7 +30,7 @@ export default class Offline extends Vue {
         </article>
         <article class="setting__logoff--setting">
           <m-button class="setting__logoff--setting--button" onClickevent={this.handleLogin}>
-            <p>Login</p>
+            <p>管理员登录</p>
           </m-button>
         </article>
       </div>

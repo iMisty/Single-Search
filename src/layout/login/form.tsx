@@ -22,7 +22,6 @@ export default class LoginForm extends Vue {
   private setLoginStatus() {
     this.errMsg = '';
     const getUserLoginData = localStorage.getItem(ACCOUNT_DATA);
-    console.log(`是否已自定义账号密码：${getUserLoginData}`);
     const value = this.loginData;
 
     // 已设置新账号密码
@@ -71,6 +70,14 @@ export default class LoginForm extends Vue {
     return true;
   }
 
+  // 键盘输入登录
+  private setLoginStatusByKeyboard(e) {
+    if (e.keyCode !== 13) {
+      return;
+    }
+    this.setLoginStatus();
+  }
+
   private loginSuccessed(path) {
     localStorage.setItem(TOKEN_DATA, 'test-token');
     const getLoginStatus = localStorage.getItem(TOKEN_DATA);
@@ -102,6 +109,7 @@ export default class LoginForm extends Vue {
               placeholder="密码"
               value={this.loginData.password}
               v-model={this.loginData.password}
+              onKeypress={(e: any) => this.setLoginStatusByKeyboard(e)}
             />
           </div>
         </section>

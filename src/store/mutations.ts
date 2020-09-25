@@ -1,13 +1,20 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:17:38
- * @LastEditTime: 2020-09-20 06:50:34
+ * @LastEditTime: 2020-09-25 12:32:49
  * @LastEditors: Miya
  * @Description: Vuex 内的 Mutations
- * @FilePath: /Single-Search/src/store/mutations.ts
+ * @FilePath: \Single-Search-Front\src\store\mutations.ts
  */
 
 const mutations = {
+  /*
+   *  改变 status 中的 is_darkmode
+   *  该变量用于修改是否开启夜间模式
+   */
+  is_darkmode(state: any, data: boolean) {
+    state.status.is_darkmode = data;
+  },
   /*
    *  改变 status 中的 is_mask
    *  该变量用于修改是否开启蒙层

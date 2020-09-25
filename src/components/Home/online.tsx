@@ -3,9 +3,9 @@
  * @Version: 1.0
  * @Date: 2020-08-26 01:06:24
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-16 16:21:54
+ * @LastEditTime: 2020-09-24 17:44:35
  * @Description: 用户在线状态模块
- * @FilePath: \Single-Search\src\components\Home\online.tsx
+ * @FilePath: \Single-Search-Front\src\components\Home\online.tsx
  */
 import { Component, Vue, Prop } from 'vue-property-decorator';
 import avatar from '@/components/avatar.tsx';
@@ -27,7 +27,7 @@ export default class UserSetting extends Vue {
 
   // 性别 => 影响默认头像
   @Prop()
-  private sex!: string;
+  private normalAvatar!: string;
 
   // 骚话
   @Prop()
@@ -62,7 +62,7 @@ export default class UserSetting extends Vue {
    * @return {type} 定义的 require 图像
    */
   get image() {
-    if (this.sex === 'male') {
+    if (this.normalAvatar === 'male') {
       return this.male;
     } else {
       return this.female;
@@ -75,7 +75,7 @@ export default class UserSetting extends Vue {
         <article class="setting__wrap--avatar">
           {/* 当自定义头像为空时使用默认头像 */}
           {this.avatar === '' ? (
-            <avatar image={this.image} sex={this.sex}></avatar>
+            <avatar image={this.image} normalAvatar={this.normalAvatar}></avatar>
           ) : (
             <section class="setting__wrap--avatar--custom">
               <avatar image={this.image}></avatar>
@@ -90,13 +90,13 @@ export default class UserSetting extends Vue {
               class="setting__wrap--information--button"
               onClickevent={this.goAdmin}
             >
-              Admin
+              进入后台
             </m-button>
             <m-button
               class="setting__wrap--information--button"
               onClickevent={this.logout}
             >
-              Logout
+              退出登录
             </m-button>
           </section>
         </article>

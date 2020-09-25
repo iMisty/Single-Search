@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-20 06:05:14
+ * @LastEditTime: 2020-09-24 18:19:34
 -->
 <template>
   <div class="home">
@@ -84,6 +84,9 @@ import { GET } from '@/utils/ajax';
 // 模型
 import User from '@/model/user.ts';
 import UserSetting from '@/model/setting.ts';
+// 默认数据
+import { userInfo } from '@/config/user.config';
+import { settingInfo } from '@/config/setting.config';
 
 @Component({
   // 组件注册
@@ -108,26 +111,9 @@ export default class Home extends Vue {
   // 一言
   private hitorikoto: string | undefined = '加载中...';
   // 用户数据
-  private userData: User = {
-    name: 'Miya',
-    sex: 'female',
-    avatar: '',
-    introduce: '只是一个默认用户',
-    dark_style: false,
-    default_search: 'bing'
-  };
+  private userData: User = userInfo;
   // 设置数据
-  private userSetting: UserSetting = {
-    background: 'https://i.loli.net/2020/06/13/Tsa8uqY2gbjRndw.jpg',
-    search_logo: require('@/assets/logo.svg'),
-    blur_style: true,
-    hitokoto: false,
-    copyright: {
-      author: 'Miya',
-      website: 'https://github.com/imisty'
-    },
-    start_date: '2005-05-04'
-  };
+  private userSetting: UserSetting = settingInfo;
 
   // methods
   /**
@@ -142,11 +128,9 @@ export default class Home extends Vue {
     const setting: string | null = localStorage.getItem('s_user_setting');
 
     if (user !== null) {
-      // @ts-ignore
       this.userData = JSON.parse(user);
     }
     if (setting !== null) {
-      // @ts-ignore
       this.userSetting = JSON.parse(setting);
     }
   }

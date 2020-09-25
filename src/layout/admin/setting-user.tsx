@@ -2,9 +2,9 @@
  * @Author: Miya
  * @Date: 2020-07-23 15:38:12
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-20 05:40:16
+ * @LastEditTime: 2020-09-25 14:49:15
  * @Description: 设置页面用户设置部分
- * @FilePath: /Single-Search/src/layout/admin/setting-user.tsx
+ * @FilePath: \Single-Search-Front\src\layout\admin\setting-user.tsx
  */
 import { Component, Vue } from 'vue-property-decorator';
 import User from '@/model/user';
@@ -26,7 +26,7 @@ export default class SettingUser extends Vue {
   // 原始数据
   private userData: User = {
     name: 'Miya',
-    sex: 'Female',
+    normal_avatar: 'Female',
     avatar: '',
     introduce: '一个测试用账号',
     dark_style: false,
@@ -48,7 +48,9 @@ export default class SettingUser extends Vue {
   // 修改是否选择暗色模式
   private changeDarkStyle() {
     this.userData.dark_style = !this.userData.dark_style;
+    this.$store.commit('is_darkmode', this.userData.dark_style);
     console.log(`是否选择暗色模式：${this.userData.dark_style}`);
+    console.log(`store：${this.$store.state.status.is_darkmode}`);
   }
 
   // 保存修改
@@ -126,7 +128,7 @@ export default class SettingUser extends Vue {
             </section>
             <select
               class="admin__user--setting--select"
-              v-model={this.userData.sex}
+              v-model={this.userData.normal_avatar}
             >
               <option value="undefined">-- 就不告诉你 --</option>
               <option value="male">Male</option>
@@ -184,7 +186,7 @@ export default class SettingUser extends Vue {
                   src={this.tipsicon}
                 />
                 <div class="admin__user--setting--tips--text">
-                  暗色模式尚未完成所以这个没法选择
+                  亮色/暗色调整
                 </div>
               </section>
             </section>
@@ -192,7 +194,6 @@ export default class SettingUser extends Vue {
               <section class="admin__user--setting--checkpoint--item">
                 <m-switch
                   status={this.userData.dark_style}
-                  disabled="false"
                   onClickevent={() => this.changeDarkStyle()}
                 ></m-switch>
               </section>
