@@ -2,9 +2,9 @@
 
 ## 目前状况
 
-beta1: 已在 release 提供下载,或者可以直接在此处(https://kagura.design) 玩耍(服务器位于海外，中国大陆用户可能速度略慢)。后台默认账号密码为（用户名：admin，密码：123456）
+beta1: 已在 release 提供下载,或者可以直接在此处(https://kagura.design/beta1) 玩耍(服务器位于海外，中国大陆用户可能速度略慢)。后台默认账号密码为（用户名：admin，密码：123456）
 
-beta2: 完善中
+beta2: 已在 release 提供下载，或者可以在此处(https://kagura.design) 玩耍，其余同beta1
 
 ## 填坑进度
 
@@ -96,7 +96,7 @@ CSS 格式化: Less
 
 - [x] 响应式支持
 
-- [ ] 暗黑模式
+- [x] 暗黑模式
 
 - [x] 背景支持
 
