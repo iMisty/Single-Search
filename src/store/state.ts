@@ -1,10 +1,10 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:20:47
- * @LastEditTime: 2020-09-20 06:49:28
+ * @LastEditTime: 2020-09-25 12:31:50
  * @LastEditors: Miya
  * @Description: Vuex State部分
- * @FilePath: /Single-Search/src/store/state.ts
+ * @FilePath: \Single-Search-Front\src\store\state.ts
  */
 
 const state = {
@@ -39,6 +39,8 @@ const state = {
   ],
   // 控制状态
   status: {
+    // 是否夜间模式
+    is_darkmode: false,
     // 是否开启遮罩层
     is_mask: false,
     // 是否输入状态

@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-09-24 18:20:30
- * @LastEditTime: 2020-09-24 18:30:01
+ * @LastEditTime: 2020-09-25 15:41:41
  * @LastEditors: Miya
  * @Description: 封装从LocalStorage获取数据方法
  * @FilePath: \Single-Search-Front\src\utils\GetLocalStorage.ts

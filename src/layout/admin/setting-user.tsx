@@ -2,7 +2,7 @@
  * @Author: Miya
  * @Date: 2020-07-23 15:38:12
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-25 12:04:33
+ * @LastEditTime: 2020-09-25 14:49:15
  * @Description: 设置页面用户设置部分
  * @FilePath: \Single-Search-Front\src\layout\admin\setting-user.tsx
  */
@@ -48,7 +48,9 @@ export default class SettingUser extends Vue {
   // 修改是否选择暗色模式
   private changeDarkStyle() {
     this.userData.dark_style = !this.userData.dark_style;
+    this.$store.commit('is_darkmode', this.userData.dark_style);
     console.log(`是否选择暗色模式：${this.userData.dark_style}`);
+    console.log(`store：${this.$store.state.status.is_darkmode}`);
   }
 
   // 保存修改
