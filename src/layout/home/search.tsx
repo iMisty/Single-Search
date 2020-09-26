@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-26 23:24:19
+ * @LastEditTime: 2020-09-27 00:58:06
  */
 import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 import svgicon from '@/components/svgicon';
@@ -104,10 +104,10 @@ export default class Search extends Vue {
    * @return: boolean
    * @author: Miya
    */
-  private submitSearchText(e: { keyCode: number }) {
+  private submitSearchText(e: { keyCode: number }, submit: boolean) {
     const choose = this.choose;
     const text = this.searchText;
-    if (e.keyCode === 13) {
+    if (e.keyCode === 13 || submit === true) {
       window.open(submitSearch(choose!, text));
       return true;
     }
@@ -132,6 +132,23 @@ export default class Search extends Vue {
     const temp: any = this.choose;
     const temparray = ['google', 'bing', 'baidu'];
     return temparray.indexOf(temp);
+  }
+
+  // 获取搜索框右侧搜索按钮的搜索引擎名称
+  private get getCHName() {
+    const choose = this.choose;
+    const temp = this.$store.state.searchList.map(
+      (item: { text: string; name: string }) => {
+        return {
+          text: item.text,
+          name: item.name
+        };
+      }
+    );
+    const index = temp.findIndex(
+      (item: { name: string }) => item.name === choose
+    );
+    return temp[index].text;
   }
 
   private render() {
@@ -175,11 +192,14 @@ export default class Search extends Vue {
               v-model={this.searchText}
               onClick={() => this.setInputStatus(true)}
               onBlur={() => this.setInputStatus(false)}
-              onKeydown={(e: any) => this.submitSearchText(e)}
+              onKeydown={(e: any) => this.submitSearchText(e, false)}
             />
           </section>
-          <section class="search--bar-submit">
-            <button>Baidu一下</button>
+          <section
+            class="search--bar-submit"
+            onClick={(e: any) => this.submitSearchText(e, true)}
+          >
+            <button>{this.getCHName}一下</button>
           </section>
         </div>
       </div>

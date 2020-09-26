@@ -95,9 +95,9 @@
 
       // 搜索栏内容
       &-wrap {
-        .layout-flex(inline-flex, row, space-between, center, nowrap);
+        .layout-flex(grid, row, space-between, center, nowrap);
+        grid-template-columns: 3rem 1fr 7rem;
         position: relative;
-        padding: 0.5rem;
         width: 64vw;
         border: 1px solid fade(@primary-background-color, 20%);
         border-radius: @border-radius;
@@ -118,7 +118,7 @@
       // 搜索引擎选择器
       &-choose {
         position: relative;
-        padding: 0 0.5rem;
+        padding: 0.5rem;
         cursor: pointer;
 
         // 输入框处搜索图标
@@ -185,9 +185,11 @@
       // 输入框
       &-input {
         width: 100%;
+        height: 100%;
 
         input {
           width: 100%;
+          padding: 0.5rem 0;
           font-size: 1rem;
           line-height: 2rem;
           border: none;
@@ -214,9 +216,16 @@
 
       // 提交按钮
       &-submit {
-        display: inline-flex;
-        padding: 0.5rem;
-        filter: invert(0.4);
+        height: 100%;
+        button {
+          width: 100%;
+          height: 100%;
+          background-color: #3d55df;
+          color: #fff;
+          font-size: 1rem;
+          letter-spacing: 0.54px;
+          cursor: pointer;
+        }
       }
     }
 
