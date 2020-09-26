@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-24 17:00:03
+ * @LastEditTime: 2020-09-26 23:24:19
  */
 import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 import svgicon from '@/components/svgicon';
@@ -127,7 +127,7 @@ export default class Search extends Vue {
     return this.searchMenu ? 'active' : '';
   }
 
-  // 临时设置： 计算图片
+  // 计算图片
   private get getChooseImg() {
     const temp: any = this.choose;
     const temparray = ['google', 'bing', 'baidu'];
@@ -177,6 +177,9 @@ export default class Search extends Vue {
               onBlur={() => this.setInputStatus(false)}
               onKeydown={(e: any) => this.submitSearchText(e)}
             />
+          </section>
+          <section class="search--bar-submit">
+            <button>Baidu一下</button>
           </section>
         </div>
       </div>
