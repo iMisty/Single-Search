@@ -1,20 +1,15 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-12 18:02:06
- * @LastEditTime: 2020-06-13 00:06:44
+ * @LastEditTime: 2020-09-27 11:53:31
  * @LastEditors: Miya
  * @Description: 根据获取的length值取得所选的搜索引擎
- * @FilePath: /Single-Search/src/services/getEngineValue.ts
+ * @FilePath: \Single-Search-Front\src\utils\getEngineValue.ts
  */
+import { store } from '@/store';
 const getEngineValue = (data: number) => {
-  switch (data) {
-    case 0:
-      return 'google';
-    case 1:
-      return 'bing';
-    case 2:
-      return 'baidu';
-  }
+  const temp = store.state.searchList;
+  return temp[data].name;
 };
 
 export { getEngineValue };
