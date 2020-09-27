@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:17:38
- * @LastEditTime: 2020-09-25 12:32:49
+ * @LastEditTime: 2020-09-27 12:13:56
  * @LastEditors: Miya
  * @Description: Vuex 内的 Mutations
  * @FilePath: \Single-Search-Front\src\store\mutations.ts
@@ -70,6 +70,13 @@ const mutations = {
    */
   set_setting(state: any, data: object) {
     state.settings.home = data;
+  },
+  /*
+   *  写入搜索引擎
+   *  写入搜索引擎入vuex
+   */
+  set_search(state: any, data: object[]) {
+    state.searchList = data;
   }
 };
 

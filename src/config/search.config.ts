@@ -1,10 +1,10 @@
 /*
  * @Author: Miya
  * @Date: 2020-09-18 16:04:27
- * @LastEditTime: 2020-09-18 17:51:53
+ * @LastEditTime: 2020-09-27 15:06:41
  * @LastEditors: Miya
  * @Description: 搜索引擎配置数据
- * @FilePath: \Single-Search\src\config\search.config.ts
+ * @FilePath: \Single-Search-Front\src\config\search.config.ts
  * @Version:
  */
 interface Search {
@@ -41,5 +41,23 @@ export const searchData: Search[] = [
     name: 'baidu',
     header: 'https://www.baidu.com/s?wd=',
     extra: ''
+  },
+  {
+    icon: 'https://github.com/fluidicon.png',
+    text: 'GitHub',
+    name: 'github',
+    header: 'https://github.com/search?q=',
+    extra: ''
+  },
+  {
+    icon: 'https://store.steampowered.com/favicon.ico',
+    text: 'Steam',
+    name: 'steam',
+    header: 'https://store.steampowered.com/search/?term=',
+    extra: ''
   }
 ];
+
+// 豆瓣：https://www.douban.com/search?q=
+// 知乎：https://www.zhihu.com/search?q=
+// 谷歌学术：https://scholar.google.com/scholar?q=

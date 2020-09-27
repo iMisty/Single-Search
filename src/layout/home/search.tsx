@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-27 00:58:06
+ * @LastEditTime: 2020-09-27 12:08:54
  */
 import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 import svgicon from '@/components/svgicon';
@@ -29,7 +29,7 @@ export default class Search extends Vue {
   // 搜索引擎选择数组
   private searchChoose: any = [];
   // 当前选择的搜索引擎
-  private choose?: string = 'baidu';
+  private choose: string = 'baidu';
   // // 放大镜图标
   // private magnifier: object = require('@/assets/magnifier.svg');
   // // 搜索引擎可选的自带参数
@@ -129,9 +129,9 @@ export default class Search extends Vue {
 
   // 计算图片
   private get getChooseImg() {
-    const temp: any = this.choose;
-    const temparray = ['google', 'bing', 'baidu'];
-    return temparray.indexOf(temp);
+    const temp: string = this.choose;
+    const temparray = this.$store.state.searchList;
+    return temparray.findIndex((item: { name: string; }) => item.name === temp);
   }
 
   // 获取搜索框右侧搜索按钮的搜索引擎名称

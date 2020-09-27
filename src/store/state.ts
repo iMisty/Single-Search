@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:20:47
- * @LastEditTime: 2020-09-25 12:31:50
+ * @LastEditTime: 2020-09-27 11:40:39
  * @LastEditors: Miya
  * @Description: Vuex State部分
  * @FilePath: \Single-Search-Front\src\store\state.ts
@@ -34,6 +34,13 @@ const state = {
       text: '百度',
       name: 'baidu',
       header: 'https://www.baidu.com/s?wd=',
+      extra: ''
+    },
+    {
+      icon: 'https://github.com/fluidicon.png',
+      text: 'GitHub',
+      name: 'github',
+      header: 'https://github.com/search?q=',
       extra: ''
     }
   ],
