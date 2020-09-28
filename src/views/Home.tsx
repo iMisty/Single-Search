@@ -1,74 +1,12 @@
-<!--
- * @Description: 首页前端页面
- * @Version: 1.0
+/*
  * @Author: Miya
  * @Date: 2020-05-27 01:24:20
+ * @LastEditTime: 2020-09-28 16:21:43
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-24 18:19:34
--->
-<template>
-  <div class="home">
-    <!-- Top start -->
-    <section class="home__top">
-      <Icon class="list--button" @handleClick="setSettingStatus(true)">
-        <img src="@/assets/user.svg" alt />
-      </Icon>
-      <Icon
-        class="list--button"
-        @handleClick="setOpenLink(true)"
-        :class="{ click: isLinkOpen, click: isSettingOpen }"
-      >
-        <span class="line top"></span>
-        <span class="line medium"></span>
-        <span class="line bottom"></span>
-      </Icon>
-    </section>
-    <!-- Top end -->
-
-    <!-- Medium start -->
-    <section class="home__medium">
-      <Search :searchMenu="searchMenu"></Search>
-      <Hitokoto :hito="hitorikoto" v-show="hitorikoto"></Hitokoto>
-    </section>
-    <!-- Medium end -->
-
-    <!-- Bottom start -->
-    <section class="home__bottom">
-      <Copyright
-        :author="userSetting.copyright.author"
-        :website="userSetting.copyright.website"
-        :startdate="userSetting.start_date"
-      ></Copyright>
-    </section>
-    <!-- Bottom end -->
-
-    <!-- RightBar start -->
-    <transition-group
-      class="home__rightbar"
-      :class="{ 'link-active': isLinkOpen, 'setting-active': isSettingOpen }"
-      tag="section"
-      name="slide"
-    >
-      <section class="home__list" v-show="isLinkOpen" :key="1">
-        <List></List>
-      </section>
-      <section class="home__setting" v-show="isSettingOpen" :key="2">
-        <Setting></Setting>
-      </section>
-    </transition-group>
-    <!-- RightBar end -->
-
-    <!-- Float & Extra start -->
-    <section
-      class="home__mask"
-      :class="{ 'mask-active': isMask }"
-      @click="setStatus(false)"
-    ></section>
-    <!-- Float & Extra end -->
-  </div>
-</template>
-
-<script lang="ts">
+ * @Description: Home Page
+ * @FilePath: \Single-Search-Front\src\views\Home.tsx
+ * @Version: 2.0
+ */
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import '@/style/home.less';
 // 链接图标
@@ -79,6 +17,10 @@ import Setting from '@/layout/home/setting.tsx';
 import List from '@/layout/home/list.tsx';
 // 搜索框
 import Search from '@/layout/home/search.tsx';
+// 一言
+import Hitokoto from '@/layout/home/hitokoto.tsx';
+// 版权声明
+import Copyright from '@/layout/home/copyright.tsx';
 // 计算搜索结果web工具函数
 import { GET } from '@/utils/ajax';
 // 模型
@@ -87,16 +29,15 @@ import UserSetting from '@/model/setting.ts';
 // 默认数据
 import { userInfo } from '@/config/user.config';
 import { settingInfo } from '@/config/setting.config';
-
 @Component({
   // 组件注册
   components: {
-    Icon,
-    Setting,
-    List,
-    Search,
-    Hitokoto: () => import('@/layout/home/hitokoto.tsx'),
-    Copyright: () => import('@/layout/home/copyright.tsx')
+    's-icon': Icon,
+    's-setting': Setting,
+    's-list': List,
+    's-search': Search,
+    Hitokoto,
+    Copyright
   }
 })
 export default class Home extends Vue {
@@ -115,7 +56,6 @@ export default class Home extends Vue {
   // 设置数据
   private userSetting: UserSetting = settingInfo;
 
-  // methods
   /**
    * @description: 获取用户数据
    * @param {type}
@@ -207,6 +147,22 @@ export default class Home extends Vue {
     this.isSettingOpen = stat;
   }
 
+  private get linkOpenStatus() {
+    return this.isLinkOpen ? 'click' : '';
+  }
+  private get settingOpenStatus() {
+    return this.isSettingOpen ? 'click' : '';
+  }
+  private get linkOpenStatusRightbar() {
+    return this.isLinkOpen ? 'link-active' : '';
+  }
+  private get settingOpenStatusRightbar() {
+    return this.settingOpenStatus ? 'setting-active' : '';
+  }
+  private get maskStatus() {
+    return this.isMask ? 'mask-active' : '';
+  }
+
   // mounted
   private mounted() {
     this.getUserData();
@@ -215,5 +171,82 @@ export default class Home extends Vue {
     // 获取一言
     this.getHitokoto();
   }
+
+  private render() {
+    return (
+      <div class="home">
+        {/* Top Start */}
+        <section class="home__top">
+          <s-icon
+            class="list--button"
+            onHandleClick={() => this.setSettingStatus(true)}
+          >
+            <img src={require('@/assets/user.svg')} alt />
+          </s-icon>
+          <s-icon
+            class={`list--button ${this.linkOpenStatus} ${this.settingOpenStatus}`}
+            onHandleClick={() => this.setOpenLink(true)}
+          >
+            <span class="line top"></span>
+            <span class="line medium"></span>
+            <span class="line bottom"></span>
+          </s-icon>
+        </section>
+        {/* Top End */}
+
+        {/* Medium Start */}
+        <section class="home__medium">
+          <s-search onSearchMenu={this.searchMenu}></s-search>
+          {this.userSetting.hitokoto ? (
+            // @ts-ignore
+            <Hitokoto hito={this.hitorikoto}></Hitokoto>
+          ) : (
+            ''
+          )}
+        </section>
+        {/* Medium End */}
+
+        {/* Bottom Start */}
+        <section class="home__bottom">
+          <Copyright
+            // @ts-ignore
+            author={this.userSetting.copyright.author}
+            website={this.userSetting.copyright.website}
+            startdate={this.userSetting.start_date}
+          ></Copyright>
+        </section>
+        {/* Bottom End */}
+
+        {/* RightBar Start */}
+        <transition-group
+          class={`home__rightbar ${this.linkOpenStatusRightbar} ${this.settingOpenStatusRightbar}`}
+          tag="section"
+          name="slide"
+        >
+          {this.isLinkOpen ? (
+            <section class="home__list" key="1">
+              <List></List>
+            </section>
+          ) : (
+            ''
+          )}
+          {this.isSettingOpen ? (
+            <section class="home__setting" key="2">
+              <Setting></Setting>
+            </section>
+          ) : (
+            ''
+          )}
+        </transition-group>
+        {/* RightBar End */}
+
+        {/* Float & Extra Start */}
+        <section
+          class={`home__mask ${this.maskStatus}`}
+          onClick={() => this.setStatus(false)}
+        ></section>
+        {/* Float & Extra End */}
+      </div>
+    );
+  }
 }
-</script>

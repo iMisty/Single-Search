@@ -1,20 +1,13 @@
-<!--
- * @Description: 入口文件
- * @Version: 1.0
+/*
  * @Author: Miya
  * @Date: 2020-05-25 22:54:11
+ * @LastEditTime: 2020-09-28 15:44:05
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-25 16:50:53
--->
-<template>
-  <div id="App" :class="darkMode">
-    <router-view></router-view>
-    <external :src="iconsrc"></external>
-  </div>
-</template>
-
-<script lang="ts">
-import { Component, Vue, Watch } from 'vue-property-decorator';
+ * @Description: Main TSX
+ * @FilePath: \Single-Search-Front\src\app.tsx
+ * @Version: 1.0
+ */
+import { Component, Vue } from 'vue-property-decorator';
 import { LINK_ICON } from '@/config/external.config';
 import { USER_DATA } from '@/config/dataname.config';
 import { install } from '@/utils/install';
@@ -28,7 +21,7 @@ import external from '@/components/external';
   }
 })
 export default class App extends Vue {
-  private isDarkMode;
+  private isDarkMode?: boolean;
   private iconsrc = LINK_ICON;
 
   private get darkMode() {
@@ -47,5 +40,12 @@ export default class App extends Vue {
     install();
     this.getStyleData();
   }
+  private render() {
+    return (
+      <div id="app">
+        <router-view></router-view>
+        <external src={this.iconsrc}></external>
+      </div>
+    );
+  }
 }
-</script>

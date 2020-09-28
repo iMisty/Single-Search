@@ -1,14 +1,14 @@
 /*
  * @Author: Miya
  * @Date: 2020-05-27 14:28:24
- * @LastEditTime: 2020-09-20 15:35:11
+ * @LastEditTime: 2020-09-28 15:55:54
  * @LastEditors: Miya
  * @Description: In User Settings Edit
- * @FilePath: /Single-Search-Front/src/router/index.ts
+ * @FilePath: \Single-Search-Front\src\router\index.ts
  */
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
-import Home from '@/views/Home.vue';
+import Home from '@/views/Home.tsx';
 import Admin from '@/views/Admin.tsx';
 // import Login from '@/views/Login.tsx';
 
