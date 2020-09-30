@@ -4,19 +4,22 @@
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-27 12:08:54
+ * @LastEditTime: 2020-09-30 17:41:35
  */
-import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 import svgicon from '@/components/svgicon';
 import engine from '@/components/Home/engine';
+import associate from '@/components/Home/associate';
 import { getEngineValue } from '@/utils/getEngineValue.ts';
 import { searchData } from '@/config/search.config';
 import { USER_DATA } from '@/config/dataname.config';
 import { submitSearch } from '@/utils/submitSearch';
+import { getExtraData } from '@/utils/GetSearchExtra';
 @Component({
   components: {
     engine,
-    svgicon
+    svgicon,
+    associate
   }
 })
 export default class Search extends Vue {
@@ -30,12 +33,10 @@ export default class Search extends Vue {
   private searchChoose: any = [];
   // 当前选择的搜索引擎
   private choose: string = 'baidu';
-  // // 放大镜图标
-  // private magnifier: object = require('@/assets/magnifier.svg');
   // // 搜索引擎可选的自带参数
   // private extraParam: string | undefined = '';
-  // // 搜索引擎联想关键词
-  // private extraDatas: string[] = [];
+  // 搜索引擎联想关键词
+  private extraDatas: string[] = [];
 
   /**
    * @name: handleSearchMenu
@@ -114,6 +115,20 @@ export default class Search extends Vue {
     return false;
   }
 
+  // 获取联想词
+  private async getSearchExtra() {
+    const search = this.choose;
+    const keyword = this.searchText;
+    try {
+      const extra = await getExtraData(search, keyword);
+      console.dir(extra.data);
+      this.extraDatas = extra.data;
+    } catch (err) {
+      this.extraDatas = [];
+      console.log(err);
+    }
+  }
+
   private mounted() {
     this.getSearchEngines();
     this.getDefaultSearchEngines();
@@ -131,7 +146,7 @@ export default class Search extends Vue {
   private get getChooseImg() {
     const temp: string = this.choose;
     const temparray = this.$store.state.searchList;
-    return temparray.findIndex((item: { name: string; }) => item.name === temp);
+    return temparray.findIndex((item: { name: string }) => item.name === temp);
   }
 
   // 获取搜索框右侧搜索按钮的搜索引擎名称
@@ -192,6 +207,7 @@ export default class Search extends Vue {
               v-model={this.searchText}
               onClick={() => this.setInputStatus(true)}
               onBlur={() => this.setInputStatus(false)}
+              onInput={this.getSearchExtra}
               onKeydown={(e: any) => this.submitSearchText(e, false)}
             />
           </section>
@@ -201,6 +217,11 @@ export default class Search extends Vue {
           >
             <button>{this.getCHName}一下</button>
           </section>
+          {this.extraDatas.length !== 0 && this.extraDatas[0] !== '' ? (
+            <associate data={this.extraDatas}></associate>
+          ) : (
+            ''
+          )}
         </div>
       </div>
     );

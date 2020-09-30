@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-05-25 22:54:11
- * @LastEditTime: 2020-09-28 15:44:05
+ * @LastEditTime: 2020-09-30 16:51:28
  * @LastEditors: Miya
  * @Description: Main TSX
  * @FilePath: \Single-Search-Front\src\app.tsx
@@ -42,7 +42,7 @@ export default class App extends Vue {
   }
   private render() {
     return (
-      <div id="app">
+      <div id="app" class={this.darkMode}>
         <router-view></router-view>
         <external src={this.iconsrc}></external>
       </div>
