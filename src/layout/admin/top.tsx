@@ -9,7 +9,7 @@ import User from '@/components/Admin/user';
 export default class AdminTop extends Vue {
   private render() {
     return (
-      <section class="admin__top">
+      <section class="admin__wrap--top">
         <admin-user></admin-user>
       </section>
     );
