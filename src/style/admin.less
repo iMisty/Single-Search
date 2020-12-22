@@ -3,111 +3,244 @@
  * @Version: 1.0
  * @Date: 2020-09-19 03:37:48
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-27 01:05:03
+ * @LastEditTime: 2020-12-23 17:57:49
  * @Description: 后台管理系统CSS
- * @FilePath: /Single-Search-Front/src/style/admin.less
+ * @FilePath: \Single-Search-APIc:\Users\Platinum Prism\Documents\GitHub\Single-Search-Front\src\style\admin.less
  */
 @import './global/var.less';
 
 .admin {
-  display: grid;
-  grid-template-columns: minmax(4rem, 8rem) 1fr;
-  grid-template-rows: 4rem auto;
-  background: #f3f4f5;
-
-  // 顶部栏
-  &__top {
-    // 顶部栏
-    grid-column: span 2;
-    .layout-flex(flex, row, flex-end, center);
-    width: 100%;
-    height: 4rem;
-    padding: 1rem 2rem 1rem 4rem;
-    z-index: 2;
-
-    // 顶部logo
-    &--logo {
-      .layout-flex(flex, row, flex-start, center);
-      height: 2rem;
-
-      img {
-        height: 100%;
-      }
-    }
-
-    // 顶部用户
-    &--user {
-      position: relative;
-      // 头像
-      &--avatar {
-        width: 2rem;
-      }
-      // 菜单选项组
-      &--menu {
-        position: absolute;
-        top: 2.5rem;
-        left: -100%;
-        width: 6rem;
-        z-index: 2;
-        text-align: center;
-        background-color: #fff;
-        box-shadow: 0 0px 2px 0px rgba(0, 0, 0, 0.18);
-        &::after {
-          content: '';
-          position: absolute;
-          top: -0.5rem;
-          left: 50%;
-          width: 1rem;
-          height: 1rem;
-          background-color: #fff;
-          transform: translateX(-50%) rotate(45deg);
-          z-index: 1;
-          box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.18);
-        }
-      }
-      // 菜单项
-      &--setting {
-        padding: 1rem 0.5rem;
-        position: relative;
-        z-index: 4;
-        background-color: #fff;
-        cursor: default;
-      }
-    }
-  }
+  // display: grid;
+  // grid-template-columns: minmax(4rem, 8rem) 1fr;
+  // grid-template-rows: 4rem auto;
+  // background: #f3f4f5;
 
   // 左边栏
   &__left {
-    .layout-flex(flex, column, flex-start, center);
-    margin-top: 2rem;
-    min-width: 8rem;
-    height: calc(100% - 4rem);
-    .router-link-exact-active {
-      background-color: #fff;
-      border-radius: @border-radius 0 0 @border-radius;
+    .position(fixed, 0, 0, 16rem, 100vh);
+    padding: 0.5rem;
+    z-index: 12;
+    background-color: #fff;
+    box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.15);
+    transition-duration: @transition-duration;
+
+    // Logo区
+    &--logo {
+      display: grid;
+      grid-template-columns: auto 2rem;
+      align-items: center;
+      padding: 1rem 0.5rem;
+      height: 5rem;
+      transition-duration: @transition-duration;
+
+      .logo > img {
+        max-height: 3rem;
+      }
+      .type {
+        .layout(flex, row, center, center);
+        transition-duration: @transition-duration;
+      }
     }
 
-    // 导航组
-    .icon {
-      .layout-flex(flex, row, flex-start, center, nowrap);
-      width: 100%;
-      padding: 1rem;
-      cursor: default;
+    &--nav {
+      padding: 0 0.5rem;
+      transition-duration: @transition-duration;
     }
 
-    // 图标
-    i&--router--icon {
-      font-size: 1.5rem;
-      color: #595bb3;
-    }
-
-    // 文字
-    &--router--text {
-      margin-left: 1rem;
-      font-size: 0.8em;
-      color: #595b83;
+    // 导航栏
+    &--list {
+      // 一级导航栏
+      &--nav {
+        padding: 0.75rem 0.5rem;
+        border-radius: @border-radius;
+        display: grid;
+        grid-template-columns: 1rem auto 1rem;
+        gap: 0.5rem;
+        align-items: center;
+        cursor: pointer;
+        transition-duration: @transition-duration;
+        &:hover {
+          background-color: #f6f9fc;
+        }
+        &.dashboard {
+          color: @primary;
+        }
+        &.blog {
+          color: @warning;
+        }
+        &.work {
+          color: @info;
+        }
+        &.setting {
+          color: @default;
+        }
+      }
+      .router-link-exact-active {
+        background-color: darken(#f9f9fc, 2%);
+      }
+      // 一级导航栏标题文字
+      &--title {
+        margin-bottom: 0;
+        overflow: hidden;
+      }
     }
   }
+
+  // 内容区
+  &__wrap {
+    margin-left: 16rem;
+    min-height: 100vh;
+    transition-duration: @transition-duration;
+    // 顶部栏
+    &--top {
+      position: relative;
+      .layout(flex, row, flex-end, center, nowrap);
+      padding: 0 1.5rem;
+      height: 4rem;
+      // Color: Can you Feel the love tonight? Sorry,I have n't feel this;
+      background: linear-gradient(90deg, #7f00ff, #e100ff) no-repeat;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 1px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.24);
+      }
+      // 顶部栏用户头像
+      &--user{
+        // position: relative;
+        // width: 2rem;
+      }
+
+      // 顶部栏内容
+      &--item {
+        .layout(flex, row, flex-start, center, nowrap);
+        margin: 0 1rem;
+        color: #fff;
+        .avatar {
+          &-username {
+            margin: 0 0.25rem;
+            color: #fff;
+            font-weight: 500;
+          }
+          &-img {
+            width: 2rem;
+            height: 2rem;
+            object-fit: cover;
+            border-radius: 64%;
+          }
+        }
+      }
+    }
+
+    // 内容标题栏
+    &--title {
+      padding: 1rem 1rem 12rem 1rem;
+      background: linear-gradient(90deg, #7f00ff, #e100ff) no-repeat;
+      & > h5 {
+        font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 700;
+        color: #fff;
+      }
+    }
+  }
+
+  // // 顶部栏
+  // &__top {
+  //   // 顶部栏
+  //   grid-column: span 2;
+  //   .layout-flex(flex, row, flex-end, center);
+  //   width: 100%;
+  //   height: 4rem;
+  //   padding: 1rem 2rem 1rem 4rem;
+  //   z-index: 2;
+
+  //   // 顶部logo
+  //   &--logo {
+  //     .layout-flex(flex, row, flex-start, center);
+  //     height: 2rem;
+
+  //     img {
+  //       height: 100%;
+  //     }
+  //   }
+
+  //   // 顶部用户
+  //   &--user {
+  //     position: relative;
+  //     // 头像
+  //     &--avatar {
+  //       width: 2rem;
+  //     }
+  //     // 菜单选项组
+  //     &--menu {
+  //       position: absolute;
+  //       top: 2.5rem;
+  //       left: -100%;
+  //       width: 6rem;
+  //       z-index: 2;
+  //       text-align: center;
+  //       background-color: #fff;
+  //       box-shadow: 0 0px 2px 0px rgba(0, 0, 0, 0.18);
+  //       &::after {
+  //         content: '';
+  //         position: absolute;
+  //         top: -0.5rem;
+  //         left: 50%;
+  //         width: 1rem;
+  //         height: 1rem;
+  //         background-color: #fff;
+  //         transform: translateX(-50%) rotate(45deg);
+  //         z-index: 1;
+  //         box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.18);
+  //       }
+  //     }
+  //     // 菜单项
+  //     &--setting {
+  //       padding: 1rem 0.5rem;
+  //       position: relative;
+  //       z-index: 4;
+  //       background-color: #fff;
+  //       cursor: default;
+  //     }
+  //   }
+  // }
+
+  // // 左边栏
+  // &__left {
+  //   .layout-flex(flex, column, flex-start, center);
+  //   margin-top: 2rem;
+  //   min-width: 8rem;
+  //   height: calc(100% - 4rem);
+  //   .router-link-exact-active {
+  //     background-color: #fff;
+  //     border-radius: @border-radius 0 0 @border-radius;
+  //   }
+
+  //   // 导航组
+  //   .icon {
+  //     .layout-flex(flex, row, flex-start, center, nowrap);
+  //     width: 100%;
+  //     padding: 1rem;
+  //     cursor: default;
+  //   }
+
+  //   // 图标
+  //   i&--router--icon {
+  //     font-size: 1.5rem;
+  //     color: #595bb3;
+  //   }
+
+  //   // 文字
+  //   &--router--text {
+  //     margin-left: 1rem;
+  //     font-size: 0.8em;
+  //     color: #595b83;
+  //   }
+  // }
 
   // 内容栏
   &__index {
@@ -115,53 +248,53 @@
     width: 100%;
   }
 
-  &__wrap {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    justify-items: center;
-    width: calc(100vw - 8rem);
-    min-height: calc(100vh - 4rem);
-    background-color: #fff;
-    border-radius: @border-radius @border-radius 0 0;
+  // &__wrap {
+  //   display: grid;
+  //   grid-template-columns: 1fr auto;
+  //   justify-items: center;
+  //   width: calc(100vw - 8rem);
+  //   min-height: calc(100vh - 4rem);
+  //   background-color: #fff;
+  //   border-radius: @border-radius @border-radius 0 0;
 
-    // 卡片栏
-    &--puzzle {
-      display: grid;
-      justify-content: center;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: 8rem;
-      grid-gap: 1rem;
-      padding: 1rem;
-    }
+  //   // 卡片栏
+  //   &--puzzle {
+  //     display: grid;
+  //     justify-content: center;
+  //     grid-template-columns: repeat(4, 1fr);
+  //     grid-template-rows: 8rem;
+  //     grid-gap: 1rem;
+  //     padding: 1rem;
+  //   }
 
-    // 卡片
-    .puzzle {
-      &-wrap {
-        padding: 1rem;
-        background-color: #fff;
-        border-radius: @border-radius;
-        box-shadow: @card-shadow;
-      }
-      &-title {
-        padding: 0.25rem;
-        font-size: 1.5rem;
-        font-weight: 600;
-        letter-spacing: 0.54px;
-      }
-      &-text {
-        font-size: 0.8rem;
-        line-height: 1.6;
-      }
-    }
+  //   // 卡片
+  //   .puzzle {
+  //     &-wrap {
+  //       padding: 1rem;
+  //       background-color: #fff;
+  //       border-radius: @border-radius;
+  //       box-shadow: @card-shadow;
+  //     }
+  //     &-title {
+  //       padding: 0.25rem;
+  //       font-size: 1.5rem;
+  //       font-weight: 600;
+  //       letter-spacing: 0.54px;
+  //     }
+  //     &-text {
+  //       font-size: 0.8rem;
+  //       line-height: 1.6;
+  //     }
+  //   }
 
-    &--puzzle--sum {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      grid-gap: 1rem;
-      height: 100%;
-    }
-  }
+  //   &--puzzle--sum {
+  //     display: grid;
+  //     grid-template-columns: 1fr 1fr;
+  //     grid-template-rows: 1fr 1fr;
+  //     grid-gap: 1rem;
+  //     height: 100%;
+  //   }
+  // }
 
   // 提交按钮
   &__submit {
