@@ -4,12 +4,11 @@
  * @Autor: Miya
  * @Date: 2020-06-02 00:04:25
  * @LastEditors: Miya
- * @LastEditTime: 2020-12-23 18:08:05
+ * @LastEditTime: 2020-12-24 10:26:12
  */
 import { Component, Vue } from 'vue-property-decorator';
 import { router } from '@/config/router.config';
 import { ADMIN_ICON } from '@/config/external.config';
-import adminTop from '@/layout/admin/top';
 // 导入SVG相关
 import svgicon from '@/components/svgicon';
 // 路由相关
