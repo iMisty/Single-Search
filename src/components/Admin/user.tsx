@@ -9,6 +9,8 @@ import SettingMenu from '@/model/admin-user';
 export default class AdminUser extends Vue {
   // 头像设置
   private avatar: string = require('@/assets/female.svg');
+  // 用户ID
+  private username: string = 'Admin';
 
   // 移动菜单
   private settingMenu: SettingMenu[] = [
@@ -30,15 +32,16 @@ export default class AdminUser extends Vue {
   }
   private render() {
     return (
-      <div class="admin__top--user">
+      <div class="admin__wrap--top--user">
         <section
-          class="admin__top--user--avatar"
+          class="admin__wrap--top--user--avatar"
           onClick={this.handleSettingMenuStatus}
         >
           <img src={this.avatar}></img>
+          <p class="admin__wrap--top--user--name">{this.username}</p>
         </section>
         {this.isSettingMenuActive ? (
-          <section class="admin__top--user--menu">
+          <section class="admin__wrap--top--user--menu">
             {this.settingMenu.map((item: any) => {
               return (
                 <user-setting

@@ -1,10 +1,10 @@
 /*
  * @Author: Miya
  * @Date: 2020-05-27 14:28:24
- * @LastEditTime: 2020-09-28 15:55:54
+ * @LastEditTime: 2020-12-26 10:27:07
  * @LastEditors: Miya
  * @Description: In User Settings Edit
- * @FilePath: \Single-Search-Front\src\router\index.ts
+ * @FilePath: \Single-Search-APIc:\Users\Platinum Prism\Documents\GitHub\Single-Search-Front\src\router\index.ts
  */
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
@@ -63,11 +63,6 @@ const routes: RouteConfig[] = [
     path: '/login',
     name: 'Login',
     component: () => import('@/views/Login')
-  },
-  {
-    path: '/test',
-    name: 'Test',
-    component: () => import('@/views/test')
   }
 ];
 
