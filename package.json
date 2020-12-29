@@ -34,7 +34,7 @@
     "less-loader": "^6.2.0",
     "style-loader": "^1.2.1",
     "tslib": "^2.0.1",
-    "typescript": "~3.8.3",
+    "typescript": "^3.9.3",
     "vue-property-decorator": "^9.0.0",
     "vue-template-compiler": "^2.6.12"
   }
