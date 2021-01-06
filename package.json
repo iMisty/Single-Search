@@ -10,7 +10,7 @@
   "dependencies": {
     "@babel/core": "^7.10.5",
     "@vue/cli": "^4.5.4",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "babel-loader": "^8.1.0",
     "core-js": "^3.6.4",
     "css-loader": "^4.2.1",
