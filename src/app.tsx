@@ -1,51 +1,29 @@
 /*
  * @Author: Miya
  * @Date: 2020-05-25 22:54:11
- * @LastEditTime: 2020-09-30 16:51:28
+ * @LastEditTime: 2021-03-29 11:40:40
  * @LastEditors: Miya
- * @Description: Main TSX
- * @FilePath: \Single-Search-Front\src\app.tsx
- * @Version: 1.0
+ * @Description: index
+ * @FilePath: \Single-Search-Front\src\App.tsx
+ * @Version: 2.0
  */
-import { Component, Vue } from 'vue-property-decorator';
-import { LINK_ICON } from '@/config/external.config';
-import { USER_DATA } from '@/config/dataname.config';
-import { install } from '@/utils/install';
-import { getLocalStorage } from '@/utils/GetLocalStorage';
-import external from '@/components/external';
+import { defineComponent, reactive } from 'vue';
+import './style/global/style.less';
 
-@Component({
-  // 组件注册
-  components: {
-    external
-  }
-})
-export default class App extends Vue {
-  private isDarkMode?: boolean;
-  private iconsrc = LINK_ICON;
+const data = reactive({});
 
-  private get darkMode() {
-    return this.isDarkMode ? 'dark' : 'light';
-  }
+const App = defineComponent({
+  components: {},
+  setup() {
+    data;
+    return { data };
+  },
 
-  private getStyleData() {
-    const data = getLocalStorage(USER_DATA);
-    // @ts-ignore
-    const style = data.dark_style;
-    this.isDarkMode = style;
-    this.$store.state.is_darkmode = style;
-  }
+  render() {
+    return <div class="app">
+      <router-view></router-view>
+    </div>;
+  },
+});
 
-  private created() {
-    install();
-    this.getStyleData();
-  }
-  private render() {
-    return (
-      <div id="app" class={this.darkMode}>
-        <router-view></router-view>
-        <external src={this.iconsrc}></external>
-      </div>
-    );
-  }
-}
+export default App;
