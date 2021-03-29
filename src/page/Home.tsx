@@ -251,7 +251,7 @@
 //   }
 // }
 
-import { defineComponent, onMounted, reactive } from 'vue';
+import { defineComponent, onMounted, reactive,TransitionGroup } from 'vue';
 
 import GlobalIcon from '../components/GlobalIcon';
 
@@ -279,6 +279,7 @@ const Home = defineComponent({
     HomeSearch,
     HomeHitokoto,
     HomeCopyright,
+    TransitionGroup
   },
   setup() {
     data;
@@ -314,7 +315,12 @@ const Home = defineComponent({
         </section>
         {/* Bottom End */}
 
-        {/* TODO: Rightbar */}
+        {/* Rightbar Start */}
+        <transition-group class={`home__rightbar`} tag="section" name="slide">
+          <section class="home__list" key="1"></section>
+          <section class="home__setting" key="2"></section>
+        </transition-group>
+        {/* Rightbar End */}
 
         {/* Extra Start */}
         <section class="home__mask"></section>
