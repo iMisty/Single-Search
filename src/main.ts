@@ -1,22 +1,15 @@
 /*
- * @Description: Main
- * @version: 1.0.0
  * @Author: Miya
- * @Date: 2020-05-26 21:59:19
+ * @Date: 2021-03-29 10:28:17
+ * @LastEditTime: 2021-03-29 11:11:25
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-19 02:17:04
+ * @Description:
+ * @FilePath: \Single-Search-Front\src\main.ts
+ * @Version:
  */
-import Vue from 'vue';
-import App from './App.vue';
-import router from './router';
-import { store } from './store';
-import '@/style/mermaid.less';
-import '@/style/global/style.less';
+import { createApp } from 'vue';
+import router from './router/router';
+import vuex from './store/store';
+import App from './App';
 
-Vue.config.productionTip = false;
-
-new Vue({
-  router,
-  store,
-  render: (h: any) => h(App),
-}).$mount('#app');
+createApp(App).use(router).use(vuex).mount('#app');

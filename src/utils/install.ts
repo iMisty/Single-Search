@@ -3,7 +3,7 @@
  * @Version: 1.0
  * @Date: 2020-09-19 04:13:49
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-25 12:23:44
+ * @LastEditTime: 2020-09-27 12:33:25
  * @Description: 首次进入加载数据
  * @FilePath: \Single-Search-Front\src\utils\install.ts
  */
@@ -15,12 +15,17 @@ import {
 } from '@/config/dataname.config';
 import { navLink } from '@/config/link.config';
 import { loginData } from '@/config/login.config';
+import { searchData } from '@/config/search.config';
 import { settingInfo } from '@/config/setting.config';
 import { userInfo } from '@/config/user.config';
+import { store } from '@/store';
 import { getLocalStorage } from './GetLocalStorage';
 
 export const install = () => {
   const user = getLocalStorage(USER_DATA);
+
+  // 写入vuex
+  store.commit('set_search', searchData);
   // 若 localStorage 中包含用户信息则判定为已开启过页面
   if (user !== '') {
     return false;
