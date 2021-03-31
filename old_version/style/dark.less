@@ -1,0 +1,185 @@
+@pri-background: #222;
+@sec-background: #444;
+@pri-text: #bbb;
+@sec-text: #666;
+
+.dark {
+  background-color: @pri-background;
+  // 右上角图标
+  .home .list--button {
+    filter: invert(0.6);
+  }
+  // 中部
+  .home__medium {
+    // 搜索框
+    .search--bar-wrap {
+      border-color: @sec-text;
+    }
+    // 搜索引擎选择框
+    .search--bar-choose .choose-engine {
+      background-color: @sec-background;
+    }
+    // 搜索引擎选择框:hover
+    .search--bar-choose .choose-engine-wrap {
+      color: @pri-text;
+    }
+    // 搜索框输入框
+    .search--bar-input {
+      input {
+        color: @pri-text;
+        &::placeholder {
+          color: @sec-text;
+        }
+      }
+    }
+    // 搜索框右侧按钮
+    .search--bar-submit button {
+      background-color: @sec-background;
+      color: @pri-text;
+    }
+    // 一言
+    .hitokoto {
+      color: @pri-text;
+    }
+    // 联想关键词数据
+    .associate {
+      background-color: @pri-background;
+      border-color: @sec-background;
+      color: @pri-text;
+    }
+  }
+  // 底部
+  .home__bottom {
+    // 版权信息
+    .copyright {
+      color: @pri-text;
+      a {
+        color: @sec-text;
+      }
+    }
+  }
+
+  // 后台
+  .admin {
+    background-color: @pri-background;
+    // 顶部部分
+    &__top {
+      // 用户设置菜单
+      &--user--setting {
+        background-color: @sec-background;
+        p {
+          color: @pri-text;
+        }
+      }
+      &--user--menu::after {
+        background-color: @sec-background;
+      }
+    }
+    // 内容部分
+    &__wrap {
+      background-color: lighten(@pri-background, 5%);
+      // 首页卡片式数据可视化
+      .puzzle-wrap {
+        background-color: @sec-background;
+      }
+      .linksum__sum {
+        color: @pri-text;
+      }
+    }
+    // 左侧选中高亮
+    &__left {
+      .router-link-exact-active {
+        background-color: lighten(@pri-background, 5%);
+      }
+      // 左侧图标
+      &--router--icon {
+        color: lighten(#595bb3, 20%);
+      }
+      // 左侧文字
+      &--router--text {
+        color: lighten(#595bb3, 20%);
+      }
+    }
+    // 链接页
+    &__link {
+      // 表格题目
+      &--table--title,
+      &--table--setting {
+        color: @pri-text;
+      }
+      &--table--wrap:nth-child(even) {
+        background-color: transparent;
+      }
+      // 表格文字背景
+      &--table--input {
+        background-color: @sec-background;
+      }
+      &--table {
+        input {
+          color: @pri-text;
+        }
+      }
+    }
+
+    // 设置页
+    &__user {
+      // 设置项标题
+      &--setting--title {
+        color: @pri-text;
+      }
+      // 下拉菜单
+      &--setting--select {
+        background-color: lighten(@pri-background, 5%);
+        color: @pri-text;
+        border-color: @sec-text;
+      }
+    }
+    &__settings {
+      &--title--text,
+      &--icon {
+        color: @pri-text;
+      }
+      &--title--text.router-link-active {
+        color: lighten(#595bb3, 20%);
+        i,
+        p {
+          color: lighten(#595bb3, 20%);
+        }
+      }
+      input {
+        border-color: @sec-text;
+        color: @pri-text;
+      }
+    }
+
+    // 保存信息
+    &__submit {
+      color: @pri-text;
+    }
+  }
+
+  // 登录页
+  .login {
+    &__form--input--item {
+      input {
+        color: @pri-text;
+        &::placeholder {
+          color: @sec-text;
+        }
+      }
+    }
+  }
+
+  // 待拆分为组件 => switch夜间模式
+  .mermaid__switch--icon {
+    background-color: lighten(@pri-background, 5%);
+    border-color: @sec-text;
+    &::after {
+      background-color: @pri-text;
+    }
+    // 开启状态
+    &.switch-active {
+      background-color: @sec-text;
+    }
+  }
+}

@@ -1,0 +1,148 @@
+// 全局设置
+::-webkit-scrollbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  opacity: 0.4;
+  z-index: 4;
+}
+
+body {
+  background-color: #f3f4f5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wrap {
+  max-width: 1200px;
+
+  @media screen and (max-width: 1280px) {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+}
+
+input {
+  border: none;
+  background: none;
+  outline: none;
+  font-size: inherit;
+}
+
+.active {
+  display: block !important;
+}
+
+.normal-cursor {
+  cursor: default;
+}
+// 去除浏览器差异性
+* {
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// 滚动条
+html {
+  /*隐藏滚动条，当IE下溢出，仍然可以滚动*/
+  -ms-overflow-style: none;
+  /*火狐下隐藏滚动条*/
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    width: 0;
+    opacity: 0.1;
+  }
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+// 32px
+h1 {
+  font-size: 2rem;
+  line-height: 2.4;
+}
+
+// 28px
+h2 {
+  font-size: 1.75rem;
+  line-height: 2.2;
+}
+
+// 26px
+h3 {
+  font-size: 1.625rem;
+  line-height: 2;
+}
+
+// 24px
+h4 {
+  font-size: 1.5rem;
+  line-height: 2;
+}
+
+// 20px
+h5 {
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+p,
+a {
+  font-size: 0.875rem;
+  line-height: 1;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+// SVG图标
+.svg-icon {
+  vertical-align: -0.15rem;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+.svg-title-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.svg-link-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+// 使用动画
+@import 'animate.less';
+// 移动端配置
+@import 'media.less';
+// 使用变量
+@import 'var.less';
+// 夜间模式
+@import '../dark.less';
