@@ -1,0 +1,38 @@
+{
+  "name": "server",
+  "version": "0.1.0",
+  "main": "app.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "tsc --watch",
+    "start": "nodemon ./src/app.ts"
+  },
+  "author": "Miya",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.13.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-combine-routers": "^4.0.2",
+    "koa-jwt": "^4.0.0",
+    "koa-parser": "^1.0.8",
+    "koa-router": "^9.1.0",
+    "koa2-cors": "^2.0.6",
+    "md5": "^2.2.1",
+    "mongoose": "^5.9.24",
+    "typescript": "^3.9.6"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.11.3",
+    "@types/koa2-cors": "^2.0.1",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/koa-bodyparser": "^4.3.0",
+    "@types/koa-router": "^7.4.1",
+    "@types/md5": "^2.2.0",
+    "@types/mongoose": "^5.7.31",
+    "nodemon": "^2.0.4",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.6"
+  }
+}
