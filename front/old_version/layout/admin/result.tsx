@@ -13,7 +13,7 @@ export default class ResultAdmin extends Vue {
   @Prop({ default: 'Total Links:' })
   public title?: string;
 
-  // @Props: colorClass => 数字左颜色，可选颜色见var.less:54
+  // @Props: colorClass => 数字左颜色，可选颜色见variable.less:54
   @Prop({ default: 'purple' })
   public colorClass?: string;
 

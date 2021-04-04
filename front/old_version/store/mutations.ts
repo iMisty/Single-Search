@@ -77,7 +77,7 @@ const mutations = {
    */
   set_search(state: any, data: object[]) {
     state.searchList = data;
-  }
+  },
 };
 
 export { mutations };
