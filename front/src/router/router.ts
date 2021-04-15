@@ -9,7 +9,7 @@
  */
 
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '../page/Home';
+import Home from '../view/Home';
 
 const routes = [
   {
