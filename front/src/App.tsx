@@ -1,10 +1,10 @@
 /*
  * @Author: Miya
  * @Date: 2020-05-25 22:54:11
- * @LastEditTime: 2021-03-29 11:40:40
+ * @LastEditTime: 2021-09-19 19:50:15
  * @LastEditors: Miya
  * @Description: index
- * @FilePath: \Single-Search-Front\src\App.tsx
+ * @FilePath: \backendg:\GitHub\Single-Search\front\src\App.tsx
  * @Version: 2.0
  */
 import { defineComponent, reactive } from 'vue';
